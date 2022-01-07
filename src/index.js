@@ -1,24 +1,53 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.css'; // TODO: Add styling
 
 class Input extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: null,
+    };
+  }
+
   render() {
     return (
-      <p className="input">I am input.</p>
+      <div>
+        <p className="input">I am in input div.</p>
+        <input type="number"
+        value={this.state.inputValue}
+        onChange={evt => this.updateInputValue(evt)}>
+        </input>
+        <p>{this.state.inputValue}</p>
+      </div>
     );
+  }
+
+  updateInputValue(evt) {
+    this.setState({
+      inputValue: evt.target.value
+    });
   }
 }
 
 class Output extends React.Component {
-  render() {
+  render(n) {
     return (
-      <p className="output">I am output.</p>
+      <div>
+        <p className="output">I am in output div.</p>
+      </div>
     );
   }
 }
 
 class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputValue: this.inputValue,
+    };
+  }
+
   render() {
     return (
       <div className="page">
