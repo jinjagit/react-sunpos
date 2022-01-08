@@ -10,10 +10,21 @@
 - [x] Pass value from child to parent state (via prop)
 - [x] Add Bootstrap & basic styling
 - [x] Modularize: each component in a separate file
-
-2. Develop date-picker  
   
-3. Develop location setter: returns latitude & longitude + timezone (which requires date from date-picker, to adjust for summer/winter changes)  
+screenshot:
+![basic](http://url/to/img.png)
+  
+2. Develop date-picker (replaces placeholder InputA component)
+  
+3. Develop location setter: returns latitude & longitude (replaces placeholder InputB component)
+
+4. Set timezone, including adjustment for summer/winter changes
+
+5. Calculate sun position (?every minute of day)
+
+6. Calculate sunrise, sunset and zenith of sun (if any)
+
+7. Plot sun's course over day. Hovering over points = shows time (replaces placeholder Output component)
 
 
 
