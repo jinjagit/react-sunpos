@@ -1,4 +1,4 @@
-import React,{ Component }  from 'react';
+import React, { Component } from 'react';
 import InputA from './inputA';
 import InputB from './inputB';
 import Output from './output';
