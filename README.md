@@ -3,6 +3,18 @@
 - [How to set Parent State from Children Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
 
+# Plan
+1. Create placeholder child components that can pass values through parent to other child.
+  - [x] Pass value from parent state to child state (via prop)
+  - [x] Pass value from child to parent state (via prop)
+  - [x] Add Bootstrap & basic styling
+  - [x] Modularize: each component in a separate file
+
+2. Develop date-picker  
+  
+3. Develop location setter: returns latitude & longitude + timezone (which requires date from date-picker, to adjust for summer/winter changes)  
+
+
 
 # Getting Started with Create React App
 
