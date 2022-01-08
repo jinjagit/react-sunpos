@@ -5,38 +5,31 @@ import './index.css'; // TODO: Add styling
 class Input extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      inputValue: 0,
-    };
+    this.state = {inputValue: ''};
+    this.handleChange.bind(this);
+  }
+
+  handleChange = (evt) => {
+    this.setState({
+      inputValue: evt.target.value
+    });
+    this.props.setStateOfPage(evt.target.value);
   }
 
   render() {
     return (
-      <div>
-        <p className="input">I am in input div.</p>
-        <input type="number"
+      <input type="number"
         value={this.state.inputValue}
-        onChange={evt => this.updateInputValue(evt)}>
-        </input>
-        <p>{this.state.inputValue}</p>
-      </div>
+        onChange={evt => this.handleChange(evt)}>
+      </input>
     );
-  }
-
-  updateInputValue(evt) {
-    this.setState({
-      inputValue: evt.target.value
-    });
   }
 }
 
 class Output extends React.Component {
   render(n) {
     return (
-      <div>
-        <p className="output">I am in output div.</p>
-        <p>{this.props.value}</p>
-      </div>
+      <p>Result: {this.props.value}</p>
     );
   }
 }
@@ -44,12 +37,15 @@ class Output extends React.Component {
 class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      inputVal: 77,
-    };
+    this.state = {inputVal: 0};
+    this.setStateOfPage.bind(this);
   }
 
-  renderOutput(val) {
+  setStateOfPage = (newValue) => {
+    this.setState({inputVal: newValue});
+  }
+
+  renderOutput() {
     return (
       <Output
         value={this.state.inputVal}
@@ -61,10 +57,10 @@ class Page extends React.Component {
     return (
       <div className="page">
         <div className="input">
-          <Input />
+          <Input setStateOfPage = {this.setStateOfPage}/>
         </div>
         <div className="output">
-        {this.renderOutput(6)}
+        {this.renderOutput()}
         </div>
       </div>
     );
