@@ -85,14 +85,19 @@ class Page extends React.Component {
   render() {
     return (
       <div className="page">
-        <div className="inputA">
-          <InputA setStateOfPageA = {this.setStateOfPageA}/>
+        <div className="inputs">
+          <div className='spacer'></div>
+          <div className="inputA input">
+            <InputA setStateOfPageA = {this.setStateOfPageA}/>
+          </div>
+          <div className='spacer'></div>
+          <div className="inputA input">
+            <InputB setStateOfPageB = {this.setStateOfPageB}/>
+          </div>
+          <div className='spacer'></div>
         </div>
-        <div className="inputA">
-          <InputB setStateOfPageB = {this.setStateOfPageB}/>
-        </div>
-        <div className="output">
-          {this.renderOutput()}
+        <div className="output result">
+          <h5>{this.renderOutput()}</h5>
         </div>
       </div>
     );

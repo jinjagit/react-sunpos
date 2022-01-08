@@ -1,0 +1,19 @@
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin: auto;
+}
+
+.result {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+
+.spacer {
+  height: 10px;
+}
