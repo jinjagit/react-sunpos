@@ -1,3 +1,11 @@
+# Useful Resources
+- [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
+- [How to set Parent State from Children Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
