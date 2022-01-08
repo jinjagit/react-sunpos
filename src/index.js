@@ -10,9 +10,7 @@ class Input extends React.Component {
   }
 
   handleChange = (evt) => {
-    this.setState({
-      inputValue: evt.target.value
-    });
+    this.setState({inputValue: evt.target.value});
     this.props.setStateOfPage(evt.target.value);
   }
 
@@ -20,7 +18,8 @@ class Input extends React.Component {
     return (
       <input type="number"
         value={this.state.inputValue}
-        onChange={evt => this.handleChange(evt)}>
+        onChange={evt => this.handleChange(evt)}
+      >
       </input>
     );
   }
@@ -47,9 +46,7 @@ class Page extends React.Component {
 
   renderOutput() {
     return (
-      <Output
-        value={this.state.inputVal}
-      />
+      <Output value={this.state.inputVal}/>
     );
   }
 
@@ -60,7 +57,7 @@ class Page extends React.Component {
           <Input setStateOfPage = {this.setStateOfPage}/>
         </div>
         <div className="output">
-        {this.renderOutput()}
+          {this.renderOutput()}
         </div>
       </div>
     );
