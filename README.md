@@ -12,7 +12,7 @@
 - [x] Modularize: each component in a separate file
   
 screenshot:
-![basic](http://url/to/img.png)
+![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/basic.png)
   
 2. Develop date-picker (replaces placeholder InputA component)
   
