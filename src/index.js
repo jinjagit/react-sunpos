@@ -6,7 +6,7 @@ class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputValue: null,
+      inputValue: 0,
     };
   }
 
@@ -42,6 +42,21 @@ class Output extends React.Component {
 }
 
 class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputVal: 77,
+    };
+  }
+
+  renderOutput(val) {
+    return (
+      <Output
+        value={this.state.inputVal}
+      />
+    );
+  }
+
   render() {
     return (
       <div className="page">
@@ -49,7 +64,7 @@ class Page extends React.Component {
           <Input />
         </div>
         <div className="output">
-          <Output value={42}/>
+        {this.renderOutput(6)}
         </div>
       </div>
     );
