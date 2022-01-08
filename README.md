@@ -2,6 +2,7 @@
 - [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 - [How to set Parent State from Children Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
+- [React 17 Bootstrap Datepicker Example](https://www.tutsmake.com/react-17-bootstrap-datepicker-example/)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.
