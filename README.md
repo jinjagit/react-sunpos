@@ -3,6 +3,8 @@
 - [How to set Parent State from Children Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
 - [React 17 Bootstrap Datepicker Example](https://www.tutsmake.com/react-17-bootstrap-datepicker-example/)
+- [Free timezone API](https://timezonedb.com/)
+- [React-google-maps click to get coordinates](https://stackoverflow.com/questions/61776224/react-google-maps-click-the-map-to-get-coordinates)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.
