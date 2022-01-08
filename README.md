@@ -5,6 +5,7 @@
 - [React 17 Bootstrap Datepicker Example](https://www.tutsmake.com/react-17-bootstrap-datepicker-example/)
 - [Free timezone API](https://timezonedb.com/)
 - [React-google-maps click to get coordinates](https://stackoverflow.com/questions/61776224/react-google-maps-click-the-map-to-get-coordinates)
+- [Adding a Map and Markers to a React Application](https://developers.google.com/maps/documentation/javascript/react-map)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.
@@ -17,16 +18,20 @@ screenshot:
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/basic.png)
   
 2. Develop date-picker (replaces placeholder InputA component)
-  
-3. Develop location setter: returns latitude & longitude (replaces placeholder InputB component)
 
-4. Set timezone, including adjustment for summer/winter changes
+3. Use simple form to get latitude, longitude and timezone (offset from UTC)
 
-5. Calculate sun position (?every minute of day)
+5. Calculate sun position (every minute of day = 1441 data points)
 
-6. Calculate sunrise, sunset and zenith of sun (if any)
+6. Calculate sunrise, sunset and zenith of sun (if any), as calculate position every minute
 
 7. Plot sun's course over day. Hovering over points = shows time (replaces placeholder Output component)
+  
+4. Develop location setter: returns latitude & longitude (replaces placeholder InputB component)
+
+5. Set timezone, including adjustment for summer/winter changes
+
+
 
 
 
