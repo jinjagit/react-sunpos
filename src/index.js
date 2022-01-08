@@ -35,19 +35,13 @@ class Output extends React.Component {
     return (
       <div>
         <p className="output">I am in output div.</p>
+        <p>{this.props.value}</p>
       </div>
     );
   }
 }
 
 class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: this.inputValue,
-    };
-  }
-
   render() {
     return (
       <div className="page">
@@ -55,7 +49,7 @@ class Page extends React.Component {
           <Input />
         </div>
         <div className="output">
-          <Output />
+          <Output value={42}/>
         </div>
       </div>
     );
