@@ -19,7 +19,7 @@ screenshot:
   
 2. Develop date-picker (replaces placeholder InputA component)
 
-3. Use simple form to get latitude, longitude and timezone (offset from UTC)
+3. Use simple form to get latitude, longitude and timezone (offset from UTC) (replaces placeholder InputB component)
 
 5. Calculate sun position (every minute of day = 1441 data points)
 
@@ -27,9 +27,9 @@ screenshot:
 
 7. Plot sun's course over day. Hovering over points = shows time (replaces placeholder Output component)
   
-4. Develop location setter: returns latitude & longitude (replaces placeholder InputB component)
+4. Develop location setter: returns latitude & longitude
 
-5. Set timezone, including adjustment for summer/winter changes
+5. Set timezone, including adjustment for summer/winter changes (may need to use API)
 
 
 
