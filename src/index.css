@@ -20,3 +20,7 @@
   width: 580px;
   height: 500px;
 }
+
+body {
+  background-color: rgb(212, 212, 212);
+}
