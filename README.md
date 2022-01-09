@@ -20,6 +20,7 @@ screenshot:
 2. Develop date-picker
 - [x] Pass value from date input to output, via page state
 - [x] Clean up basic form styling (use Bootstrap styling)
+- [x] limit dates to 2002 - 2042
   
 screenshot:  
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
