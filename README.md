@@ -14,22 +14,29 @@
 - [x] Add Bootstrap & basic styling
 - [x] Modularize: each component in a separate file
   
-screenshot:
+screenshot:  
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/basic.png)
   
-2. Develop date-picker (replaces placeholder InputA component)
-
-3. Use simple form to get latitude, longitude and timezone (offset from UTC) (replaces placeholder InputB component)
-
-5. Calculate sun position (every minute of day = 1441 data points)
-
-6. Calculate sunrise, sunset and zenith of sun (if any), as calculate position every minute
-
-7. Plot sun's course over day. Hovering over points = shows time (replaces placeholder Output component)
+2. Develop date-picker
+- [x] Pass value from date input to output, via page state
+- [x] Clean up basic form styling (use Bootstrap styling)
   
-4. Develop location setter: returns latitude & longitude
-
-5. Set timezone, including adjustment for summer/winter changes (may need to use API)
+screenshot:  
+![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
+  
+3. Develop basic chart plotting that dynamically updates  
+  
+4. Use simple form to get latitude, longitude and timezone (offset from UTC)  
+  
+5. Calculate sun position (every minute of day = 1441 data points)  
+  
+6. Calculate sunrise, sunset and zenith of sun (if any), as calculate position every minute  
+  
+7. Plot sun's course over day. Hovering over points = shows time  
+  
+8. Develop location setter: returns latitude & longitude  
+  
+9. Set timezone, including adjustment for summer/winter changes (may need to use API)  
 
 
 
