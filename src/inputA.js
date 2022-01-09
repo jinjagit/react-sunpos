@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class InputA extends Component {
   constructor(props) {
     super(props);
-    this.state = {inputValue: 0};
+    this.state = {inputValue: 5};
     this.handleChange.bind(this);
-    this.props.setStateOfPageA(0);
+    this.props.setStateOfPageA(5);
   }
 
   handleChange = (evt) => {
