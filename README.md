@@ -8,6 +8,9 @@
 - [Adding a Map and Markers to a React Application](https://developers.google.com/maps/documentation/javascript/react-map)
 - [react-charts](https://react-charts.tanstack.com/docs/overview)
 - [react-charts quick example](https://www.npmjs.com/package/react-charts#quick-example)
+- [chart.js](https://www.chartjs.org/docs/latest/)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+- [How to use chart.js to create charts in React](https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.

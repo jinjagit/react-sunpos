@@ -18,9 +18,9 @@ function Plot(props: MyProps) {
           y: 0,
         },
         {
-        x: props.a,
-        y: props.b,
-      },
+          x: props.a,
+          y: props.b,
+        },
       ],
     },
   ]
