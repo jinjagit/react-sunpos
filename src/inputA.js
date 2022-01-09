@@ -16,7 +16,7 @@ class InputA extends Component {
 
   render() {
     return (
-      <input type="number"
+      <input type="number" className='form-control'
         value={this.state.inputValue}
         onChange={evt => this.handleChange(evt)}
       >
