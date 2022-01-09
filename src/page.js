@@ -3,7 +3,7 @@ import InputA from './inputA';
 import InputB from './inputB';
 import Date from './date';
 import Output from './output';
-import Plot from './plot.tsx';
+import Rechart from './rechart.tsx';
 
 class Page extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class Page extends Component {
         </div>
         <div className='container plot'>
           <div className='container chart'>
-            <Plot a={this.state.inputValA} b={this.state.inputValB}/>
+            <Rechart a={this.state.inputValA} b={this.state.inputValB}/>
           </div>
         </div>
       </div>
