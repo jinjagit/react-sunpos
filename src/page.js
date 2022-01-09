@@ -55,10 +55,8 @@ class Page extends Component {
         <div className='output result'>
           <h5><Output date ={this.state.date}/></h5>
         </div>
-        <div className='container plot'>
-          <div className='container chart'>
-            <Rechart a={this.state.inputValA} b={this.state.inputValB}/>
-          </div>
+        <div className='container chart'>
+          <Rechart a={this.state.inputValA} b={this.state.inputValB}/>
         </div>
       </div>
     );
