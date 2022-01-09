@@ -28,12 +28,6 @@ class Page extends Component {
     this.setState({date: newValue});
   }
 
-  renderOutput() {
-    return (
-      <Output value={(this.state.inputValA + this.state.inputValB)} date ={this.state.date}/>
-    );
-  }
-
   render() {
     return (
       <div className='page'>
@@ -46,11 +40,11 @@ class Page extends Component {
               <Date setStateOfPageDate = {this.setStateOfPageDate}/>
             </div>
             <div className='inputA input mb-3'>
-              <label className='form-label'>Input A</label>
+              <label className='form-label'>x value</label>
               <InputA setStateOfPageA = {this.setStateOfPageA}/>
             </div>
             <div className='inputA input mb-3'>
-              <label className='form-label'>Input B</label>
+              <label className='form-label'>y value</label>
               <InputB setStateOfPageB = {this.setStateOfPageB}/>
             </div>
           </form>
@@ -59,10 +53,12 @@ class Page extends Component {
         <div className='spacer'></div>
 
         <div className='output result'>
-          <h5>{this.renderOutput()}</h5>
+          <h5><Output date ={this.state.date}/></h5>
         </div>
-        <div className='container chart'>
-          <Plot a={this.state.inputValA} b={this.state.inputValB}/>
+        <div className='container plot'>
+          <div className='container chart'>
+            <Plot a={this.state.inputValA} b={this.state.inputValB}/>
+          </div>
         </div>
       </div>
     );
