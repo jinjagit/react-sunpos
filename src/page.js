@@ -3,6 +3,7 @@ import InputA from './inputA';
 import InputB from './inputB';
 import Date from './date';
 import Output from './output';
+import MyChart from './plot.tsx';
 
 class Page extends Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class Page extends Component {
 
         <div className='output result'>
           <h5>{this.renderOutput()}</h5>
+          <MyChart />
         </div>
       </div>
     );
