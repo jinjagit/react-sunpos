@@ -12,6 +12,10 @@
   height: 10px;
 }
 
+.big-spacer {
+  height: 50px;
+}
+
 .chart {
   width: 580px;
   height: 500px;

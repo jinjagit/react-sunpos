@@ -31,7 +31,7 @@ class Page extends Component {
   render() {
     return (
       <div className='page'>
-        <div className='spacer'></div>
+        <div className='big-spacer'></div>
 
         <div className='container inputs'>
           <form>
