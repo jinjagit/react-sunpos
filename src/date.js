@@ -15,7 +15,7 @@ class Date extends Component {
 
   render() {
     return (
-      <input type="date" min="2002-01-01" max="2042-12-31" className='form-control'
+      <input type='date' min='2002-01-01' max='2042-12-31' className='form-control'
         value={this.state.date}
         onChange={evt => this.handleChange(evt)}
       >

@@ -35,21 +35,21 @@ class Page extends Component {
 
   render() {
     return (
-      <div className="page">
+      <div className='page'>
         <div className='spacer'></div>
 
-        <div className="container inputs">
+        <div className='container inputs'>
           <form>
-            <div className="date input mb-3">
-              <label className="form-label">Date</label>
+            <div className='date input mb-3'>
+              <label className='form-label'>Date</label>
               <Date setStateOfPageDate = {this.setStateOfPageDate}/>
             </div>
-            <div className="inputA input mb-3">
-              <label className="form-label">Input A</label>
+            <div className='inputA input mb-3'>
+              <label className='form-label'>Input A</label>
               <InputA setStateOfPageA = {this.setStateOfPageA}/>
             </div>
-            <div className="inputA input mb-3">
-              <label className="form-label">Input B</label>
+            <div className='inputA input mb-3'>
+              <label className='form-label'>Input B</label>
               <InputB setStateOfPageB = {this.setStateOfPageB}/>
             </div>
           </form>
@@ -57,7 +57,7 @@ class Page extends Component {
 
         <div className='spacer'></div>
 
-        <div className="output result">
+        <div className='output result'>
           <h5>{this.renderOutput()}</h5>
         </div>
       </div>
