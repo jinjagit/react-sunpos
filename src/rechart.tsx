@@ -1,25 +1,28 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const data = [
-  {
-    x: 0,
-    y: 0,
-  },
-  {
-    x: 5,
-    y: 7,
-  },
-];
+interface Props {
+  a: number,
+  b: number,
+}
 
-export default class Rechart extends PureComponent {
+export default class Rechart extends PureComponent<Props> {
   render() {
     return (
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
           height={300}
-          data={data}
+          data={[
+            {
+              x: 0,
+              y: 0,
+            },
+            {
+              x: this.props.a,
+              y: this.props.b,
+            },
+          ]}
           margin={{
             top: 5,
             right: 30,
