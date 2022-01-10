@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class InputTimezoneOffset extends Component {
+class InputUTCOffset extends Component {
   constructor(props) {
     super(props);
     this.state = {offset: 0};
     this.handleChange.bind(this);
-    this.props.setPageTimezoneOffset(0);
+    this.props.setUTCOffset(0);
   }
 
   handleChange = (evt) => {
     this.setState({offset: evt.target.value});
-    this.props.setPageTimezoneOffset(parseFloat(evt.target.value));
+    this.props.setUTCOffset(parseFloat(evt.target.value));
   }
 
   render() {
@@ -24,4 +24,4 @@ class InputTimezoneOffset extends Component {
   }
 }
 
-export default InputTimezoneOffset;
+export default InputUTCOffset;

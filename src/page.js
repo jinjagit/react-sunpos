@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import InputDate from './inputDate';
 import InputLatitude from './inputLatitude';
 import InputLongitude from './inputLongitude';
-import InputTimezoneOffset from './inputTimezoneOffset';
+import InputUTCOffset from './inputUTCOffset';
 // import Output from './output';
 import Rechart from './rechart.tsx';
 
@@ -16,7 +16,7 @@ class Page extends Component {
     this.setPageDate.bind(this);
     this.setPageLatitude.bind(this);
     this.setPageLongitude.bind(this);
-    this.setPageTimezoneOffset.bind(this);
+    this.setUTCOffset.bind(this);
   }
 
   setPageDate = (newValue) => {
@@ -31,7 +31,7 @@ class Page extends Component {
     this.setState({latitude: newValue});
   }
 
-  setPageTimezoneOffset = (newValue) => {
+  setUTCOffset = (newValue) => {
     this.setState({offset: newValue});
   }
 
@@ -40,7 +40,7 @@ class Page extends Component {
       <div className='page'>
         <div className='big-spacer'></div>
 
-        <div className='container inputs'>
+        <div className='inputs container'>
           <form>
             <div className='mb-3'>
               <label className='form-label'>Date</label>
@@ -58,15 +58,15 @@ class Page extends Component {
               <InputLongitude setPageLongitude = {this.setPageLongitude}/>
             </div>
             <div className='mb-3'>
-              <label className='form-label'>Timezone offset</label>
-              <InputTimezoneOffset setPageTimezoneOffset = {this.setPageTimezoneOffset}/>
+              <label className='form-label'>UTC offset</label>
+              <InputUTCOffset setUTCOffset = {this.setUTCOffset}/>
             </div>
           </form>
         </div>
 
         <div className='spacer'></div>
 
-        <div className='container chart'>
+        <div className='chart container'>
           <Rechart latitude={this.state.longitude} longitude={this.state.latitude}/>
         </div>
       </div>
