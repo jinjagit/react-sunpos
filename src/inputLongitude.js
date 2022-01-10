@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 
-class InputB extends Component {
+class InputLongitude extends Component {
   constructor(props) {
     super(props);
-    this.state = {inputValue: 3};
+    this.state = {longitude: 3};
     this.handleChange.bind(this);
-    this.props.setStateOfPageB(3);
+    this.props.setPageLongitude(3);
   }
 
   handleChange = (evt) => {
-    this.setState({inputValue: evt.target.value});
-    this.props.setStateOfPageB(parseFloat(evt.target.value));
+    this.setState({longitude: evt.target.value});
+    this.props.setPageLongitude(parseFloat(evt.target.value));
   }
 
   render() {
     return (
       <input type='number' className='form-control'
-        value={this.state.inputValue}
+        value={this.state.longitude}
         onChange={evt => this.handleChange(evt)}
       >
       </input>
@@ -24,4 +24,4 @@ class InputB extends Component {
   }
 }
 
-export default InputB;
+export default InputLongitude;

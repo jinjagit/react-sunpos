@@ -1,22 +1,22 @@
 import React, { Component } from 'react';
 
-class InputA extends Component {
+class InputLatitude extends Component {
   constructor(props) {
     super(props);
-    this.state = {inputValue: 5};
+    this.state = {latitude: 5};
     this.handleChange.bind(this);
-    this.props.setStateOfPageA(5);
+    this.props.setPageLatitude(5);
   }
 
   handleChange = (evt) => {
-    this.setState({inputValue: evt.target.value});
-    this.props.setStateOfPageA(parseFloat(evt.target.value));
+    this.setState({latitude: evt.target.value});
+    this.props.setPageLatitude(parseFloat(evt.target.value));
   }
 
   render() {
     return (
       <input type='number' className='form-control'
-        value={this.state.inputValue}
+        value={this.state.latitude}
         onChange={evt => this.handleChange(evt)}
       >
       </input>
@@ -24,4 +24,4 @@ class InputA extends Component {
   }
 }
 
-export default InputA;
+export default InputLatitude;

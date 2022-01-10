@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
-import InputA from './inputA';
-import InputB from './inputB';
-import Date from './date';
+import InputLatitude from './inputLatitude';
+import InputLongitude from './inputLongitude';
+import InputDate from './inputDate';
 import Output from './output';
 import Rechart from './rechart.tsx';
 
 class Page extends Component {
   constructor(props) {
     super(props);
-    this.state = {inputValA: 0};
-    this.state = {inputValB: 0};
+    this.state = {longitude: 0};
+    this.state = {latitude: 0};
     this.state = {date: ''};
-    this.setStateOfPageA.bind(this);
-    this.setStateOfPageB.bind(this);
-    this.setStateOfPageDate.bind(this);
+    this.setPageLatitude.bind(this);
+    this.setPageLongitude.bind(this);
+    this.setPageDate.bind(this);
   }
 
-  setStateOfPageA = (newValue) => {
-    this.setState({inputValA: newValue});
+  setPageLatitude = (newValue) => {
+    this.setState({longitude: newValue});
   }
 
-  setStateOfPageB = (newValue) => {
-    this.setState({inputValB: newValue});
+  setPageLongitude = (newValue) => {
+    this.setState({latitude: newValue});
   }
 
-  setStateOfPageDate = (newValue) => {
+  setPageDate = (newValue) => {
     this.setState({date: newValue});
   }
 
@@ -37,18 +37,18 @@ class Page extends Component {
           <form>
             <div className='date input mb-3'>
               <label className='form-label'>Date</label>
-              <Date setStateOfPageDate = {this.setStateOfPageDate}/>
+              <InputDate setPageDate = {this.setPageDate}/>
             </div>
             <div className='output result'>
               <h5><Output date ={this.state.date}/></h5>
             </div>
             <div className='inputA input mb-3'>
-              <label className='form-label'>x value</label>
-              <InputA setStateOfPageA = {this.setStateOfPageA}/>
+              <label className='form-label'>Latitude</label>
+              <InputLatitude setPageLatitude = {this.setPageLatitude}/>
             </div>
             <div className='inputA input mb-3'>
-              <label className='form-label'>y value</label>
-              <InputB setStateOfPageB = {this.setStateOfPageB}/>
+              <label className='form-label'>Longitude</label>
+              <InputLongitude setPageLongitude = {this.setPageLongitude}/>
             </div>
           </form>
         </div>
@@ -56,7 +56,7 @@ class Page extends Component {
         <div className='spacer'></div>
 
         <div className='container chart'>
-          <Rechart a={this.state.inputValA} b={this.state.inputValB}/>
+          <Rechart latitude={this.state.longitude} longitude={this.state.latitude}/>
         </div>
       </div>
     );

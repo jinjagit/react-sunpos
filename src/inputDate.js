@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 
-class Date extends Component {
+class InputDate extends Component {
   constructor(props) {
     super(props);
     this.state = {date: ''};
     this.handleChange.bind(this);
-    this.props.setStateOfPageDate('');
+    this.props.setPageDate('');
   }
 
   handleChange = (evt) => {
     this.setState({date: evt.target.value});
-    this.props.setStateOfPageDate(evt.target.value);
+    this.props.setPageDate(evt.target.value);
   }
 
   render() {
@@ -24,4 +24,4 @@ class Date extends Component {
   }
 }
 
-export default Date;
+export default InputDate;

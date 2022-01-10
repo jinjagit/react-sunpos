@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface Props {
-  a: number,
-  b: number,
+  longitude: number,
+  latitude: number,
 }
 
 export default class Rechart extends PureComponent <Props> {
@@ -19,8 +19,8 @@ export default class Rechart extends PureComponent <Props> {
               y: 0,
             },
             {
-              x: this.props.a,
-              y: this.props.b,
+              x: this.props.longitude,
+              y: this.props.latitude,
             },
           ]}
           margin={{
