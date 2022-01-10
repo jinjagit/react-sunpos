@@ -34,9 +34,8 @@ screenshot:
 3. Develop basic chart plotting that dynamically updates
 - [x] Add recharts npm dependency and get basic static example working
 - [x] Pass input values to chart and dynamically update chart (simple example)
-
-
-
+  
+https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-ab8f-3243356d452f.mov
   
 4. Use simple form to get latitude, longitude and timezone (offset from UTC)  
   
