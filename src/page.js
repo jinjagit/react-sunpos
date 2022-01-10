@@ -39,6 +39,9 @@ class Page extends Component {
               <label className='form-label'>Date</label>
               <Date setStateOfPageDate = {this.setStateOfPageDate}/>
             </div>
+            <div className='output result'>
+              <h5><Output date ={this.state.date}/></h5>
+            </div>
             <div className='inputA input mb-3'>
               <label className='form-label'>x value</label>
               <InputA setStateOfPageA = {this.setStateOfPageA}/>
@@ -52,9 +55,6 @@ class Page extends Component {
 
         <div className='spacer'></div>
 
-        <div className='output result'>
-          <h5><Output date ={this.state.date}/></h5>
-        </div>
         <div className='container chart'>
           <Rechart a={this.state.inputValA} b={this.state.inputValB}/>
         </div>
