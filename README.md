@@ -45,13 +45,15 @@ https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-a
 5. Calculate sun position (every minute of day = 1441 data points)  
 - [ ] start by passing data to a function (as module) from page component, then on to chart after manipulating data in the function  
   
-6. Calculate sunrise, sunset and zenith of sun (if any), as calculate position every minute  
+6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute  
   
-7. Plot sun's course over day. Hovering over points = shows time  
+7. Plot sun's inclination x time. Hovering over points = shows direction
+
+8. Plot sun's path = inclination x direction. Hovering over points = shows time  
   
-8. Develop location setter: returns latitude & longitude  
+9. Develop location setter? returns latitude & longitude 
   
-9. Set timezone, including adjustment for summer/winter changes (may need to use API)  
+10. Set timezone, including adjustment for summer/winter changes? (probably need to use API) 
 
 
 
