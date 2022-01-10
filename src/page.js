@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
+import InputDate from './inputDate';
 import InputLatitude from './inputLatitude';
 import InputLongitude from './inputLongitude';
-import InputDate from './inputDate';
+import InputTimezoneOffset from './inputTimezoneOffset';
 // import Output from './output';
 import Rechart from './rechart.tsx';
 
 class Page extends Component {
   constructor(props) {
     super(props);
-    this.state = {longitude: 0};
-    this.state = {latitude: 0};
     this.state = {date: ''};
+    this.state = {latitude: 0};
+    this.state = {longitude: 0};
+    this.state = {offset: 0};
+    this.setPageDate.bind(this);
     this.setPageLatitude.bind(this);
     this.setPageLongitude.bind(this);
-    this.setPageDate.bind(this);
+    this.setPageTimezoneOffset.bind(this);
+  }
+
+  setPageDate = (newValue) => {
+    this.setState({date: newValue});
   }
 
   setPageLatitude = (newValue) => {
@@ -24,8 +31,8 @@ class Page extends Component {
     this.setState({latitude: newValue});
   }
 
-  setPageDate = (newValue) => {
-    this.setState({date: newValue});
+  setPageTimezoneOffset = (newValue) => {
+    this.setState({offset: newValue});
   }
 
   render() {
@@ -46,9 +53,13 @@ class Page extends Component {
               <label className='form-label'>Latitude</label>
               <InputLatitude setPageLatitude = {this.setPageLatitude}/>
             </div>
-            <div className='inputA input mb-3'>
+            <div className='inputB input mb-3'>
               <label className='form-label'>Longitude</label>
               <InputLongitude setPageLongitude = {this.setPageLongitude}/>
+            </div>
+            <div className='timezone-offset input mb-3'>
+              <label className='form-label'>Timezone offset</label>
+              <InputTimezoneOffset setPageTimezoneOffset = {this.setPageTimezoneOffset}/>
             </div>
           </form>
         </div>
