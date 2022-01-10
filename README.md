@@ -12,6 +12,7 @@
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 - [How to use chart.js to create charts in React](https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react)
 - [recharts](https://recharts.org/en-US/)
+- [React Bootstrap icons](https://www.npmjs.com/package/react-bootstrap-icons)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.
