@@ -42,22 +42,22 @@ class Page extends Component {
 
         <div className='container inputs'>
           <form>
-            <div className='date input mb-3'>
+            <div className='mb-3'>
               <label className='form-label'>Date</label>
               <InputDate setPageDate = {this.setPageDate}/>
             </div>
             {/* <div className='output result'>
               <h5><Output date ={this.state.date}/></h5>
             </div> */}
-            <div className='inputA input mb-3'>
+            <div className='mb-3'>
               <label className='form-label'>Latitude</label>
               <InputLatitude setPageLatitude = {this.setPageLatitude}/>
             </div>
-            <div className='inputB input mb-3'>
+            <div className='mb-3'>
               <label className='form-label'>Longitude</label>
               <InputLongitude setPageLongitude = {this.setPageLongitude}/>
             </div>
-            <div className='timezone-offset input mb-3'>
+            <div className='mb-3'>
               <label className='form-label'>Timezone offset</label>
               <InputTimezoneOffset setPageTimezoneOffset = {this.setPageTimezoneOffset}/>
             </div>
