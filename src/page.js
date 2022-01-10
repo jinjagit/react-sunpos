@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import InputLatitude from './inputLatitude';
 import InputLongitude from './inputLongitude';
 import InputDate from './inputDate';
-import Output from './output';
+// import Output from './output';
 import Rechart from './rechart.tsx';
 
 class Page extends Component {
@@ -39,9 +39,9 @@ class Page extends Component {
               <label className='form-label'>Date</label>
               <InputDate setPageDate = {this.setPageDate}/>
             </div>
-            <div className='output result'>
+            {/* <div className='output result'>
               <h5><Output date ={this.state.date}/></h5>
-            </div>
+            </div> */}
             <div className='inputA input mb-3'>
               <label className='form-label'>Latitude</label>
               <InputLatitude setPageLatitude = {this.setPageLatitude}/>
