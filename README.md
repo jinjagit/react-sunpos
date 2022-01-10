@@ -26,7 +26,7 @@ screenshot:
 2. Develop date-picker
 - [x] Pass value from date input to output, via page state
 - [x] Clean up basic form styling (use Bootstrap styling)
-- [x] limit dates to 2002 - 2042
+- [x] Limit dates to 2002 - 2042
   
 screenshot:  
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
@@ -37,9 +37,13 @@ screenshot:
   
 https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-ab8f-3243356d452f.mov
   
-4. Use simple form to get latitude, longitude and timezone (offset from UTC)  
+4. Rework simple form to get latitude, longitude and timezone (offset from UTC), and the existing date input
+- [ ] Rename existing input components (and labels) accordingly
+- [ ] Add input for timezone offset
+- [ ] Ensure only valid values can be inputted
   
 5. Calculate sun position (every minute of day = 1441 data points)  
+- [ ] start by passing data to a function (as module) from page component, then on to chart after manipulating data in the function  
   
 6. Calculate sunrise, sunset and zenith of sun (if any), as calculate position every minute  
   
