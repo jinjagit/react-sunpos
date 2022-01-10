@@ -31,7 +31,12 @@ screenshot:
 screenshot:  
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
   
-3. Develop basic chart plotting that dynamically updates  
+3. Develop basic chart plotting that dynamically updates
+- [x] Add recharts npm dependency and get basic static example working
+- [x] Pass input values to chart and dynamically update chart (simple example)
+
+
+
   
 4. Use simple form to get latitude, longitude and timezone (offset from UTC)  
   
