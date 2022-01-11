@@ -12,6 +12,7 @@
 - [How to use chart.js to create charts in React](https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react)
 - [recharts](https://recharts.org/en-US/)
 - [React Bootstrap icons](https://www.npmjs.com/package/react-bootstrap-icons)
+- [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.

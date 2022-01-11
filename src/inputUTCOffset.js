@@ -23,8 +23,6 @@ class InputUTCOffset extends Component {
     }
   }
 
-  // /^[0-9 ()+-]+$/
-
   render() {
     return (
       <div className='mb-3'>
