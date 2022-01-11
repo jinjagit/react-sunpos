@@ -15,11 +15,14 @@ class InputUTCOffset extends Component {
 
   render() {
     return (
-      <input type='number' className='form-control'
-        value={this.state.offset}
-        onChange={evt => this.handleChange(evt)}
-      >
-      </input>
+      <div className='mb-3'>
+        <label className='form-label'>UTC offset</label>
+        <input type='number' className='form-control'
+          value={this.state.offset}
+          onChange={evt => this.handleChange(evt)}
+        >
+        </input>
+      </div>
     );
   }
 }

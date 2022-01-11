@@ -15,11 +15,14 @@ class InputLongitude extends Component {
 
   render() {
     return (
-      <input type='number' className='form-control'
-        value={this.state.longitude}
-        onChange={evt => this.handleChange(evt)}
-      >
-      </input>
+      <div className='mb-3'>
+        <label className='form-label'>Longitude</label>
+        <input type='number' className='form-control'
+          value={this.state.longitude}
+          onChange={evt => this.handleChange(evt)}
+        >
+        </input>
+      </div>
     );
   }
 }

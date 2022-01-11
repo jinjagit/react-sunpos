@@ -2,7 +2,6 @@
 - [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 - [How to set Parent State from Child Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
-- [React 17 Bootstrap Datepicker Example](https://www.tutsmake.com/react-17-bootstrap-datepicker-example/) * not needed
 - [Free timezone API](https://timezonedb.com/)
 - [React-google-maps click to get coordinates](https://stackoverflow.com/questions/61776224/react-google-maps-click-the-map-to-get-coordinates)
 - [Adding a Map and Markers to a React Application](https://developers.google.com/maps/documentation/javascript/react-map)

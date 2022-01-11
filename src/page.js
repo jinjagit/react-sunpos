@@ -3,7 +3,6 @@ import InputDate from './inputDate';
 import InputLatitude from './inputLatitude';
 import InputLongitude from './inputLongitude';
 import InputUTCOffset from './inputUTCOffset';
-// import Output from './output';
 import Rechart from './rechart.tsx';
 
 class Page extends Component {
@@ -42,33 +41,16 @@ class Page extends Component {
 
         <div className='inputs container'>
           <form>
-            <div className='mb-3'>
-              <label className='form-label'>Date</label>
-              <InputDate setPageDate = {this.setPageDate}/>
-            </div>
-            {/* <div className='output result'>
-              <h5><Output date ={this.state.date}/></h5>
-            </div> */}
-            <div className='mb-3'>
-              <label className='form-label'>Latitude</label>
-              <InputLatitude setPageLatitude = {this.setPageLatitude}/>
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'>Longitude</label>
-              <InputLongitude setPageLongitude = {this.setPageLongitude}/>
-            </div>
-            <div className='mb-3'>
-              <label className='form-label'>UTC offset</label>
-              <InputUTCOffset setUTCOffset = {this.setUTCOffset}/>
-            </div>
+            <InputDate setPageDate = {this.setPageDate}/>           
+            <InputLatitude setPageLatitude = {this.setPageLatitude}/>            
+            <InputLongitude setPageLongitude = {this.setPageLongitude}/>
+            <InputUTCOffset setUTCOffset = {this.setUTCOffset}/>
           </form>
         </div>
 
         <div className='spacer'></div>
 
-        <div className='chart container'>
-          <Rechart latitude={this.state.longitude} longitude={this.state.latitude}/>
-        </div>
+        <Rechart latitude={this.state.longitude} longitude={this.state.latitude}/>
       </div>
     );
   }
