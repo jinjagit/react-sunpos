@@ -17,7 +17,9 @@ class InputLongitude extends Component {
     return (
       <div className='mb-3'>
         <label className='form-label'>Longitude</label>
-        <input type='number' className='form-control'
+        <input
+          className='form-control'
+          type='number'
           value={this.state.longitude}
           onChange={evt => this.handleChange(evt)}
         >

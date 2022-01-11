@@ -32,10 +32,27 @@ export default class Rechart extends PureComponent <Props> {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="x" type="number" domain={[0, 10]} tickCount={11}/>
-            <YAxis dataKey="y" type="number" domain={[0, 10]} tickCount={11}/>
+            <XAxis
+              dataKey="x"
+              type="number"
+              domain={[0, 10]}
+              tickCount={11}
+            />
+            <YAxis
+              dataKey="y"
+              type="number"
+              domain={[0, 10]}
+              tickCount={11}
+            />
             <Tooltip />
-            <Line type="monotone" dataKey="y" stroke="#8884d8" activeDot={{ r: 6 }} isAnimationActive={false} strokeWidth={3} />
+            <Line
+              type="monotone"
+              dataKey="y"
+              stroke="#8884d8"
+              activeDot={{ r: 6 }}
+              isAnimationActive={false}
+              strokeWidth={3}
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

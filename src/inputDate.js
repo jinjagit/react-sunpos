@@ -17,7 +17,11 @@ class InputDate extends Component {
     return (
       <div className='mb-3'>
         <label className='form-label'>Date</label>
-        <input type='date' min='2002-01-01' max='2042-12-31' className='form-control'
+        <input
+          className='form-control'
+          type='date'
+          min='2002-01-01'
+          max='2042-12-31'
           value={this.state.date}
           onChange={evt => this.handleChange(evt)}
         >

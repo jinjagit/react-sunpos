@@ -17,7 +17,9 @@ class InputLatitude extends Component {
     return (
       <div className='mb-3'>
         <label className='form-label'>Latitude</label>
-        <input type='number' className='form-control'
+        <input
+          className='form-control'
+          type='number'
           value={this.state.latitude}
           onChange={evt => this.handleChange(evt)}
         >
