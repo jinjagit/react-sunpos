@@ -23,11 +23,11 @@ class Page extends Component {
   }
 
   setPageLatitude = (newValue) => {
-    this.setState({longitude: newValue});
+    this.setState({latitude: newValue});
   }
 
   setPageLongitude = (newValue) => {
-    this.setState({latitude: newValue});
+    this.setState({longitude: newValue});
   }
 
   setUTCOffset = (newValue) => {

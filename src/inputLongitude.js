@@ -9,8 +9,18 @@ class InputLongitude extends Component {
   }
 
   handleChange = (evt) => {
-    this.setState({longitude: evt.target.value});
-    this.props.setPageLongitude(parseFloat(evt.target.value));
+    this.setState({longitude: this.limitLongitude(evt.target.value)});
+    this.props.setPageLongitude(parseFloat(this.limitLongitude(evt.target.value)));
+  }
+
+  limitLongitude = (value) => {
+    if (value < -180) {
+      return -180;
+    } else if (value > 180) {
+      return 180;
+    } else {
+      return value;
+    }
   }
 
   render() {

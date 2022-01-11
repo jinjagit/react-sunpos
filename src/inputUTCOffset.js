@@ -9,9 +9,21 @@ class InputUTCOffset extends Component {
   }
 
   handleChange = (evt) => {
-    this.setState({offset: evt.target.value});
-    this.props.setUTCOffset(parseFloat(evt.target.value));
+    this.setState({offset: this.limitUTCOffset(evt.target.value)});
+    this.props.setUTCOffset(parseInt(this.limitUTCOffset(evt.target.value)));
   }
+
+  limitUTCOffset = (value) => {
+    if (value < -12) {
+      return -12;
+    } else if (value > 13) {
+      return 13;
+    } else {
+      return value;
+    }
+  }
+
+  // /^[0-9 ()+-]+$/
 
   render() {
     return (
@@ -20,6 +32,7 @@ class InputUTCOffset extends Component {
         <input 
           className='form-control'
           type='number'
+          step='1'
           value={this.state.offset}
           onChange={evt => this.handleChange(evt)}
         >

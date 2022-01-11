@@ -9,8 +9,18 @@ class InputLatitude extends Component {
   }
 
   handleChange = (evt) => {
-    this.setState({latitude: evt.target.value});
-    this.props.setPageLatitude(parseFloat(evt.target.value));
+    this.setState({latitude: this.limitLatitude(evt.target.value)});
+    this.props.setPageLatitude(parseFloat(this.limitLatitude(evt.target.value)));
+  }
+
+  limitLatitude = (value) => {
+    if (value < -90) {
+      return -90;
+    } else if (value > 90) {
+      return 90;
+    } else {
+      return value;
+    }
   }
 
   render() {
@@ -20,6 +30,8 @@ class InputLatitude extends Component {
         <input
           className='form-control'
           type='number'
+          min='-90'
+          max='90'
           value={this.state.latitude}
           onChange={evt => this.handleChange(evt)}
         >
