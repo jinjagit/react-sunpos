@@ -50,16 +50,6 @@ const integersToTimeStr = (h, m) => {
   return `${hrs}:${mins}`;
 }
 
-
-// ---------------------- Test data ----------------------
-// let date = new Date()
-// let dateStr = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate(); // not needed, eventually, as we start with date string from form
-// let h = 14
-// let m = 7
-// let longitude = - 46.6396 // Sao Paulo (in degrees)
-// let latitude = -23.5558         // Sao Paulo (in degrees)
-// let utcOffset = -3              // Sao Paulo, UTC-3
-
 // ================================= Calculate the Sun's position =================================
 // Algorithm based on information in: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
