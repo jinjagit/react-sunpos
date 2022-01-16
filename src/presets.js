@@ -34,6 +34,22 @@ export const getPreset = (name) => {
         utcOffset: '-3',
       };
       break;
+      case 't1': // Tromosø, 21st June, 2022
+      preset = {
+        date: '2022-06-21',
+        latitude: '69.6492',
+        longitude: '18.9553',
+        utcOffset: '2',
+      };
+      break;
+      case 't2': // Tromosø, 21st December, 2022
+      preset = {
+        date: '2022-12-21',
+        latitude: '69.6492',
+        longitude: '18.9553',
+        utcOffset: '1',
+      };
+      break;
     default:
       break;
   }

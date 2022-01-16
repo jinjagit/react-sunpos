@@ -152,6 +152,8 @@ class Input extends Component {
                 <option value='b2'>Brussels, 21st December, 2022</option>
                 <option value='sp1'>São Paulo, 21st June, 2022</option>
                 <option value='sp2'>São Paulo, 21st December, 2022</option>
+                <option value='t1'>Tromsø, 21st June, 2022</option>
+                <option value='t2'>Tromsø, 21st December, 2022</option>
               </select>
             </div>
           </div>
