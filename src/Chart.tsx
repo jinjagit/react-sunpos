@@ -26,7 +26,7 @@ export default class Chart extends PureComponent <Props> {
             bottom: 5,
           }}
         >
-          <ReferenceArea y1={0.0} alwaysShow fill='hsl(56, 70%, 93%)' />
+          <ReferenceArea y1={0.0} ifOverflow='extendDomain' fill='hsl(56, 70%, 93%)' />
           <CartesianGrid strokeDasharray='3 3' />
           <ReferenceLine y='-0.0' stroke='#adadad' />
           

@@ -11,15 +11,15 @@ class Calculate extends Component {
         <div>
           <div className='container'>          
             <p>Calculation for date: {this.props.params.date}, latitude: {this.props.params.latitude}, longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}.</p>
-            <p>Note: sunrise and sunset are defined as when the sun is 0.833 degrees <i>below</i> the horizon (to correct for the average refraction of sunlight near the horizon)</p>
           </div>
           <div className='container chartContainer'>
             <div className='chartBox'>
               <div className='chart'>
-                <h5>Time of day x Inclination (degrees above/below horizon)</h5>
+                <h5 className='title'>Time of day x Inclination (apparent degrees above/below horizon<sup>*</sup>)</h5>
                 <Chart data={data} />
               </div>
             </div>
+            <p><sup>*</sup>This apparent (observed) inclination of the sun includes an estimation of atmospheric refraction (inversely related to inclination).</p>
           </div>
         </div>
       );

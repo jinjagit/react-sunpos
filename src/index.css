@@ -54,3 +54,7 @@ input, select {
 .chartContainer {
   border-style: none;
 }
+
+.title {
+  margin-top: 3px;
+}

@@ -86,8 +86,13 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   //                             cos(latitude) * sin(sza)
   const saa = (Math.acos(((Math.sin(degrees(latitude)) * Math.cos(sza)) - Math.sin(decl)) / (Math.cos(degrees(latitude)) * Math.sin(sza))) - degrees(180.0)) * -1
   
+  // This is cool until it gets below the horizon, then it goes over 1.0 !! = baaaad! 
+  const refractionFactor = radians(sza) / 90.0; // close to 1.0 for the horizon, close to 0.0 for the zenith
+  console.log(refractionFactor);
+  console.log(90.0 - radians(sza));
+
   return {
-    sza: 90.0 - radians(sza),
+    sza: 90.0 + (0.833 * refractionFactor) - radians(sza), // 0.833 = rough approximation of refraction near horizon
     saa: radians(saa),
     time: integersToTimeStr(h, m),
   };
