@@ -1,0 +1,26 @@
+.inputs {
+  width: 200px;
+}
+
+.result {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.big-spacer {
+  height: 50px;
+}
+
+.chart {
+  width: 580px;
+  height: 500px;
+}
+
+body {
+  background-color: rgb(212, 212, 212);
+}

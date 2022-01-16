@@ -1,26 +1,41 @@
-.inputs {
-  width: 200px;
-}
-
-.result {
-  text-align: center;
-  height: 60px;
-  line-height: 60px;
-}
-
-.spacer {
-  height: 10px;
-}
-
-.big-spacer {
-  height: 50px;
-}
-
-.chart {
-  width: 580px;
-  height: 500px;
-}
-
 body {
-  background-color: rgb(212, 212, 212);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: hsl(56, 70%, 50%) !important;
+}
+
+input, select {
+  border-width: 1px;
+  border-style: solid;
+  border-color: hsl(56, 70%, 45%) !important;
+}
+
+.container {
+  background: hsl(56, 70%, 85%);
+  padding: 10px;
+  border-width: 0 0 3px 0;
+  border-style: solid;
+  border-color: hsl(56, 70%, 50%) !important;
+}
+
+.lg-spacer {
+  height: 20px;
+}
+
+.formErrors {
+  color: #dc3545;
+  text-align: center;
+}
+
+.has-error {
+  border-color: #dc3545 !important;
+  border-width: 3px !important;
+}
+
+.submit:disabled{
+  background-color: #91bdff !important;
 }
