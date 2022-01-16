@@ -44,6 +44,7 @@ https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-a
 - [x] Ensure only valid values can be inputted
 - [x] Display useful validation errors and highlight invalid input elements
 - [x] Simplify props flow (really only need flow from parents to children)
+- [x] Add selection of presets (to showcase and illustrate functionality more easily)
 
 screenshot:  
 ![form](https://github.com/jinjagit/react-sunpos/blob/main/img/form.png)
