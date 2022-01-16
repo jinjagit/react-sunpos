@@ -43,5 +43,9 @@ input, select {
 .chart {
   height: 500px;
   text-align: center;
-  padding-bottom: 30px;
+  border-style: none;
+}
+
+.chartBox {
+  height: 630px !important;
 }
