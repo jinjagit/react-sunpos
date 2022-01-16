@@ -47,6 +47,10 @@ input, select {
 }
 
 .chartBox {
-  height: 630px !important;
+  height: 550px !important;
   padding: 0 !important;
+}
+
+.chartContainer {
+  border-style: none;
 }

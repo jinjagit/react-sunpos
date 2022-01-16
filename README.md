@@ -58,14 +58,12 @@ screenshot:
 ![form](https://github.com/jinjagit/react-sunpos/blob/main/img/Screenshot_2022-01-16.png)
 
 6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute  
-  
-7. Plot sun's inclination x time. Hovering over points = shows direction
 
-8. Plot sun's path = inclination x direction. Hovering over points = shows time  
+7. Plot sun's path = inclination x direction. Hovering over points = shows time  
   
-9. Develop location setter? returns latitude & longitude 
+8. Develop location setter (map?) returns latitude & longitude 
   
-10. Set timezone, including adjustment for summer/winter changes? (probably need to use API) 
+9. Set timezone, including adjustment for summer/winter changes? (probably need to use API) 
 
 
 
