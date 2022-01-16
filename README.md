@@ -55,7 +55,7 @@ screenshot:
 - [x] plot sun's inclination over day
 
 screenshot:  
-![form](https://github.com/jinjagit/react-sunpos/blob/main/img/inclinationChart.png)
+![form](https://github.com/jinjagit/react-sunpos/blob/main/img/Screenshot_2022-01-16.png)
 
 6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute  
   
