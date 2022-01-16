@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { sunPath } from './sunPath';
+import Chart from './Chart.tsx';
 
 class Calculate extends Component {
   render() {
@@ -7,10 +8,13 @@ class Calculate extends Component {
       let data = sunPath(this.props.params.date, parseFloat(this.props.params.latitude), parseFloat(this.props.params.longitude), parseInt(this.props.params.utcOffset));
 
       return (
-        <div className='container'>
-          <p>Last parameters received: {JSON.stringify(this.props.params)}</p>
-          <br></br>
-          <p>{JSON.stringify(data)}</p>
+        <div>
+          <div className='container'>
+            <p>Last parameters received: {JSON.stringify(this.props.params)}</p>
+          </div>
+          <div className='container chart'>
+            <Chart data={data} />
+          </div>
         </div>
       );
     } else {

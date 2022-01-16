@@ -39,3 +39,7 @@ input, select {
 .submit:disabled{
   background-color: #91bdff !important;
 }
+
+.chart {
+  height: 500px;
+}
