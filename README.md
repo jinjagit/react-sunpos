@@ -39,9 +39,14 @@ screenshot:
 https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-ab8f-3243356d452f.mov
   
 4. Rework simple form to get latitude, longitude and timezone (offset from UTC), and the existing date input
-- [ ] Rename existing input components (and labels) accordingly
-- [ ] Add input for timezone offset
-- [ ] Ensure only valid values can be inputted
+- [x] Rename existing input components (and labels) accordingly
+- [x] Add input for timezone offset
+- [x] Ensure only valid values can be inputted
+- [x] Display useful validation errors and highlight invalid input elements
+- [x] Simplify props flow (really only need flow from parents to children)
+
+screenshot:  
+![form](https://github.com/jinjagit/react-sunpos/blob/main/img/form.png)
   
 5. Calculate sun position (every minute of day = 1441 data points)  
 - [ ] start by passing data to a function (as module) from page component, then on to chart after manipulating data in the function  
