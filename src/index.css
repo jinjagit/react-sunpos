@@ -48,4 +48,5 @@ input, select {
 
 .chartBox {
   height: 630px !important;
+  padding: 0 !important;
 }

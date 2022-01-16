@@ -10,7 +10,7 @@ class Calculate extends Component {
       return (
         <div className='container chartBox'>
           <div className='container'>
-            <p>Last parameters received: {JSON.stringify(this.props.params)}</p>
+            <p>Calculation for date: {this.props.params.date}, latitude: {this.props.params.latitude}, longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}.</p>
           </div>
           <div className='container chart'>
             <h5>Time of day x Inclination (degrees above/below horizon)</h5>

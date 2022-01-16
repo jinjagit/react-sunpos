@@ -30,18 +30,12 @@ export default class Chart extends PureComponent <Props> {
           <XAxis
             dataKey="time"
             type="category"
-            ticks={[
-              '00:00', '01:00', '02:00', '03:00', '04:00', '05:00',
-              '06:00', '07:00', '08:00', '09:00', '10:00', '11:00',
-              '12:00', '13:00', '14:00', '15:00', '16:00', '17:00',
-              '18:00', '19:00', '20:00', '21:00', '22:00', '23:00',
-              '23:59'
-            ]}
+            ticks={['00:00', '06:00', '12:00', '18:00', '23:59']}
             interval={0}
           />
-          <YAxis />
-          <Tooltip />
-          <Line type="monotone" dataKey="sza" stroke="#8884d8" activeDot={false} strokeWidth={2} dot={false} />
+          <YAxis tickFormatter={ tick => `${tick}\u02DA` } />
+          <Tooltip cursor={{ stroke: 'red', strokeWidth: 1 }} formatter={(value, name) => [`${parseFloat(value).toFixed(2)}\u02DA`, 'inclination']}/>
+          <Line type="monotone" dataKey="sza" stroke="#8884d8" activeDot={{ r: 5 }} strokeWidth={2} dot={false} />
           <ReferenceLine y="0.0" stroke="#adadad" />
         </LineChart>
       </ResponsiveContainer>
