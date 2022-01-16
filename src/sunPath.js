@@ -88,9 +88,9 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   
   // This is cool until it gets below the horizon, then it goes over 1.0 !! = baaaad! 
   // Probably need two different tail-offs, one for horizon and up, one for down from there (which should tail off quicker, but this will look weird).
-  const refractionFactor = radians(sza) / 90.0; // close to 1.0 for the horizon, close to 0.0 for the zenith
+  const refractionFactor = (90.0 - Math.abs(90 - radians(sza))) / 90.0; // close to 1.0 for the horizon, close to 0.0 for the zenith
   console.log(refractionFactor);
-  console.log(90.0 - radians(sza));
+  console.log(90 - radians(sza));
 
   return {
     sza: 90.0 + (0.833 * refractionFactor) - radians(sza), // 0.833 = rough approximation of refraction near horizon
