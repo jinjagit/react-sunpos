@@ -25,7 +25,7 @@ export default class Chart2 extends PureComponent <Props> {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
+          <XAxis dataKey="time" type="category"/>
           <YAxis />
           <Tooltip />
           <Line

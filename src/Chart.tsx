@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { LineChart, Legend, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface Props {
   data: {
@@ -30,9 +30,7 @@ export default class Chart extends PureComponent <Props> {
           <XAxis dataKey="time" type="category"/>
           <YAxis />
           <Tooltip />
-          <Legend />
           <Line type="monotone" dataKey="sza" stroke="#8884d8" activeDot={false} strokeWidth={1} dot={false} />
-          <Line type="monotone" dataKey="saa" stroke="#82ca9d" strokeWidth={1} dot={false}/>
         </LineChart>
       </ResponsiveContainer>
     );

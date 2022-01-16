@@ -97,7 +97,7 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   const saa = (Math.acos(((Math.sin(degrees(latitude)) * Math.cos(sza)) - Math.sin(decl)) / (Math.cos(degrees(latitude)) * Math.sin(sza))) - degrees(180.0)) * -1
   
   return {
-    sza: radians(sza),
+    sza: 90.0 - radians(sza),
     saa: radians(saa),
     time: integersToTimeStr(h, m),
   };

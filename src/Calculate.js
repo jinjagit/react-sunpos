@@ -13,6 +13,7 @@ class Calculate extends Component {
             <p>Last parameters received: {JSON.stringify(this.props.params)}</p>
           </div>
           <div className='container chart'>
+            <h5>Time (minutes) x Inclination (degrees above/below horizon)</h5>
             <Chart data={data} />
           </div>
         </div>

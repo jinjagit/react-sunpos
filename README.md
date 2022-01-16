@@ -50,9 +50,13 @@ https://user-images.githubusercontent.com/3944042/148815365-f64facbf-4d2a-4019-a
 screenshot:  
 ![form](https://github.com/jinjagit/react-sunpos/blob/main/img/form.png)
   
-5. Calculate sun position (every minute of day = 1441 data points)  
-- [ ] start by passing data to a function (as module) from page component, then on to chart after manipulating data in the function  
-  
+5. Calculate sun position (every minute of day = 1440 data points)  
+- [x] start by passing data to a function (as module) from page component, then on to chart after manipulating data in the function  
+- [x] plot sun's inclination over day
+
+screenshot:  
+![form](https://github.com/jinjagit/react-sunpos/blob/main/img/inclinationChart.png)
+
 6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute  
   
 7. Plot sun's inclination x time. Hovering over points = shows direction
