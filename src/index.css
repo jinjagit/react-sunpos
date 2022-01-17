@@ -14,6 +14,11 @@ input, select {
   border-color: hsl(56, 70%, 45%) !important;
 }
 
+table {
+  border-collapse: collapse;
+  border-color: hsl(56, 70%, 45%) !important;
+}
+
 .container {
   background: hsl(56, 70%, 85%);
   padding: 10px;
@@ -51,10 +56,18 @@ input, select {
   padding: 0 !important;
 }
 
-.chartContainer {
+.borderlessContainer {
   border-style: none;
 }
 
 .title {
   margin-top: 3px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.centered {
+  margin: auto !important;
 }

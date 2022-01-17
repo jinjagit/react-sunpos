@@ -6,13 +6,34 @@ class Output extends Component {
     if (this.props.params.date !== '') {
       return (
         <div>
-          <div className='container'>          
-            <p>Calculation for Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}.</p>
-            <p>Sunrise: {this.props.data.sunrise.time}</p>
-            <p>Zenith: {this.props.data.zenith.time}</p>
-            <p>Sunset: {this.props.data.sunset.time}</p>
+          <div className='container'>     
+            <p className='center-text'><strong>Calculation for:</strong> Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}</p>
+            <div className='container borderlessContainer d-flex align-items-center justify-content-center'>
+              <table class="table w-auto">
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sunrise</td>
+                    <td>{this.props.data.sunrise.time}</td>
+                  </tr>
+                  <tr>
+                    <td>Zenith</td>
+                    <td>{this.props.data.zenith.time}</td>
+                  </tr>
+                  <tr>
+                    <td>Sunset</td>
+                    <td>{this.props.data.sunset.time}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
-          <div className='container chartContainer'>
+          <div className='container borderlessContainer'>
             <div className='chartBox'>
               <div className='chart'>
                 <h5 className='title'>Inclination<sup>*</sup> of Sun (degrees) x Time (HH:MM)</h5>
@@ -26,7 +47,7 @@ class Output extends Component {
     } else {
       return (
         <div className='container'>
-          <p>Nothing calculated.</p>
+          <p className='center-text'>Nothing calculated.</p>
         </div>
       );
     }
