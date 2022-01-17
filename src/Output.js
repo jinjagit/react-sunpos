@@ -7,16 +7,19 @@ class Output extends Component {
       return (
         <div>
           <div className='container'>          
-            <p>Calculation for date: {this.props.params.date}, latitude: {this.props.params.latitude}, longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}.</p>
+            <p>Calculation for Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}.</p>
+            <p>Sunrise: {this.props.data.sunrise.time}</p>
+            <p>Zenith: {this.props.data.zenith.time}</p>
+            <p>Sunset: {this.props.data.sunset.time}</p>
           </div>
           <div className='container chartContainer'>
             <div className='chartBox'>
               <div className='chart'>
-                <h5 className='title'>Time of day x Inclination (apparent degrees above/below horizon<sup>*</sup>)</h5>
-                <Chart data={this.props.data} />
+                <h5 className='title'>Inclination<sup>*</sup> of Sun (degrees) x Time (HH:MM)</h5>
+                <Chart data={this.props.data.pathData} />
               </div>
             </div>
-            <p><sup>*</sup>This apparent (observed) inclination of the sun includes an estimation of atmospheric refraction (inversely related to inclination).</p>
+            <p><sup>*</sup>This apparent (observed) inclination of the sun includes an estimation of atmospheric refraction (inversely related to deviation from horizontal).</p>
           </div>
         </div>
       );

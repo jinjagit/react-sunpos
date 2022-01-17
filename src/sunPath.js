@@ -87,7 +87,7 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   const saa = (Math.acos(((Math.sin(degrees(latitude)) * Math.cos(sza)) - Math.sin(decl)) / (Math.cos(degrees(latitude)) * Math.sin(sza))) - degrees(180.0)) * -1
   
   // refractionFactor close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
-  const refractionFactor = (90.0 - Math.abs(90 - radians(sza))) / 90.0; // close to 1.0 for the horizon, close to 0.0 for the zenith
+  const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2); // close to 1.0 for the horizon, close to 0.0 for the zenith
   // console.log(refractionFactor);
   // console.log(90 - radians(sza));
 
@@ -99,13 +99,70 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
 }
 
 export const sunPath = (date, latitude, longitude, utcOffset) => {
+  const smallestAbs = (a, b) => {
+    return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
+  }
+
   let pathData = [];
+  let sunrise = 'not set';
+  let sunset = 'not set';
+  let zenith = 'not set';
+  let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
     for (let m = 0; m < 60; m++) {
-      pathData.push(sunPos(date, h, m, latitude, longitude, utcOffset));
+      let datum = sunPos(date, h, m, latitude, longitude, utcOffset);
+      pathData.push(datum)
+
+      console.log(lastDatum);
+
+      if (lastDatum !== null) {
+        if (sunrise === 'not set' && datum.sza >= 0.0 && lastDatum.sza <= 0.0) {
+          sunrise = smallestAbs(datum, lastDatum);
+        } else if (datum.sza <= 0.0 && lastDatum.sza >= 0.0) {
+          sunset = smallestAbs(datum, lastDatum);
+        }
+      }
+
+      if (lastDatum === null || datum.sza > lastDatum.sza) {
+        zenith = datum;
+      }
+
+      lastDatum = datum;
     }
   }
 
-  return pathData;
+  if (sunrise === 'not set') {
+    let neverReason = '';
+
+    if (zenith.sza > 0.0) {
+      neverReason = 'never - constant daylight';
+    } else {
+      neverReason = 'never - constant darkness';
+      zenith = {
+        sza: null,
+        saa: null,
+        time: neverReason,
+      };
+    }
+
+    sunrise = {
+      sza: null,
+      saa: null,
+      time: neverReason,
+    };
+
+    sunset = {
+      sza: null,
+      saa: null,
+      time: neverReason,
+    };
+  }
+
+  return {
+    pathData: pathData,
+    sunrise: sunrise,
+    sunset: sunset,
+    zenith: zenith,
+  };
 }
