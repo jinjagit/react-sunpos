@@ -24,12 +24,6 @@ class Calculate extends Component {
       longitudeValid: false,
       utcOffsetValid: false,
       formValid: false,
-      params: {
-        date: '',
-        latitude: '',
-        longitude: '',
-        utcOffset: '',
-      },
       data: {},
     }
   }
@@ -130,19 +124,13 @@ class Calculate extends Component {
   handleSubmit= (evt) => {
     evt.preventDefault();
 
-    this.setState({params: {
-      date: this.state.date,
-      latitude: this.state.latitude,
-      longitude: this.state.longitude,
-      utcOffset: this.state.utcOffset
-    }});
     this.setState({
       data: sunPath(
-              this.state.date,
-              parseFloat(this.state.latitude),
-              parseFloat(this.state.longitude),
-              parseInt(this.state.utcOffset)
-            )
+        this.state.date,
+        parseFloat(this.state.latitude),
+        parseFloat(this.state.longitude),
+        parseInt(this.state.utcOffset)
+      )
     });
   }
 
@@ -228,7 +216,14 @@ class Calculate extends Component {
             </div>
           </form>
         </div>
-        <Output params={this.state.params} data={this.state.data} />
+        <Output
+          params={{
+            date: this.state.date,
+            latitude: this.state.latitude,
+            longitude: this.state.longitude,
+            utcOffset: this.state.utcOffset,
+          }}
+          data={this.state.data} />
       </div>
     )
   }

@@ -3,7 +3,7 @@ import Chart from './Chart.tsx';
 
 class Output extends Component {
   render() {    
-    if (this.props.params.date !== '') {
+    if (this.props.data.sunrise !== undefined) {
       return (
         <div>
           <div className='container'>     

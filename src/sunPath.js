@@ -102,6 +102,8 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
   }
 
+  console.log('sunPath');
+
   let pathData = [];
   let sunrise = 'not set';
   let sunset = 'not set';
