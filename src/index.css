@@ -71,3 +71,23 @@ table {
 .centered {
   margin: auto !important;
 }
+
+.time {
+  margin: 0 0;
+  padding: 3px 7.5px;
+  background: white;
+}
+
+.inclination {
+  margin: 0 0;
+  padding: 3px 7.5px;
+  background: white;
+  color: hsl(243, 52%, 58%);
+}
+
+.direction {
+  margin: 0 0;
+  padding: 3px 7.5px;
+  background: white;
+  color: #007AFF;
+}

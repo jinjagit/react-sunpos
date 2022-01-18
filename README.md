@@ -13,6 +13,7 @@
 - [recharts](https://recharts.org/en-US/)
 - [React Bootstrap icons](https://www.npmjs.com/package/react-bootstrap-icons)
 - [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
+- [Custom Rechart Toolip](https://github.com/recharts/recharts/issues/275)
 
 # Plan
 1. Create placeholder child components that can pass values through parent to other child.
