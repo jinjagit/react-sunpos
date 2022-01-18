@@ -86,11 +86,10 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   //                             cos(latitude) * sin(sza)
   const saa = (Math.acos(((Math.sin(degrees(latitude)) * Math.cos(sza)) - Math.sin(decl)) / (Math.cos(degrees(latitude)) * Math.sin(sza))) - degrees(180.0)) * -1
   
-  // refractionFactor close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
-  const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2); // close to 1.0 for the horizon, close to 0.0 for the zenith
-  // console.log(refractionFactor);
-  // console.log(90 - radians(sza));
-
+  // refractionFactor = close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
+  // Close to 1.0 for the horizontal, close to 0.0 for the zenith & nadir.
+  // This applies refraction even when the sun is well below the horizon, but it's better than nothing.
+  const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2); 
   return {
     sza: 90.0 + (0.833 * refractionFactor) - radians(sza), // 0.833 = rough approximation of refraction near horizon
     saa: radians(saa),
@@ -112,9 +111,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
   for (let h = 0; h < 24; h++) {
     for (let m = 0; m < 60; m++) {
       let datum = sunPos(date, h, m, latitude, longitude, utcOffset);
-      pathData.push(datum)
-
-      console.log(lastDatum);
+      pathData.push(datum);
 
       if (lastDatum !== null) {
         if (sunrise === 'not set' && datum.sza >= 0.0 && lastDatum.sza <= 0.0) {

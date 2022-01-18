@@ -28,8 +28,7 @@ export default class Chart extends PureComponent <Props> {
         >
           <ReferenceArea y1={0.0} ifOverflow='extendDomain' fill='hsl(56, 70%, 93%)' />
           <CartesianGrid strokeDasharray='3 3' />
-          <ReferenceLine y='-0.0' stroke='#adadad' />
-          
+          <ReferenceLine y='-0.0' stroke='#adadad' />         
           <XAxis
             dataKey='time'
             type='category'
@@ -38,8 +37,7 @@ export default class Chart extends PureComponent <Props> {
           />
           <YAxis tickFormatter={ tick => `${tick}\u02DA` } />
           <Tooltip cursor={{ stroke: 'red', strokeWidth: 1 }} formatter={(value, name) => [`${parseFloat(value).toFixed(2)}\u02DA`, 'inclination']}/>
-          <Line type='monotone' dataKey='sza' stroke='#8884d8' activeDot={{ r: 5 }} strokeWidth={2} dot={false} />
-          
+          <Line type='monotone' dataKey='sza' stroke='#8884d8' activeDot={{ r: 5 }} strokeWidth={2} dot={false} />          
         </LineChart>
       </ResponsiveContainer>
     );

@@ -9,7 +9,7 @@ class Output extends Component {
           <div className='container'>     
             <p className='center-text'><strong>Calculation for:</strong> Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}</p>
             <div className='container borderlessContainer d-flex align-items-center justify-content-center'>
-              <table class="table w-auto">
+              <table className="table w-auto">
                 <thead>
                   <tr>
                     <th scope="col">Event</th>
