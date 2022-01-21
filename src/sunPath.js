@@ -50,18 +50,41 @@ const integersToTimeStr = (h, m) => {
   return `${hrs}:${mins}`;
 }
 
-// Is this time string (e.g. '12:00') before that time string (e.g. '12:10')? => true
-const thisIsBeforeThat = (a, b) => {
+const timeStrToIntegers = (timeStr) => {
+  const parts = timeStr.split(':');
+  return [parseInt(parts[0]), parseInt(parts[1])];
+}
+
+const timeStrToDurationStr = (timeStr) => {
+  const [h, m] = timeStrToIntegers(timeStr);
+  return `${h}h ${m}m`;
+}
+
+// Returns duration between two time strings in 24-hour format, as string 'HH:MM'
+const timeBetween = (a, b) => {
   const partsA = a.split(':');
   const partsB = b.split(':');
 
-  return timeToFraction(partsA[0], partsA[1]) < timeToFraction(partsB[0], partsB[1]) ? true : false;
+  const minsA = (parseInt(partsA[0]) * 60) + parseInt(partsA[1]);
+  const minsB = (parseInt(partsB[0]) * 60) + parseInt(partsB[1]);
+
+  const hours = Math.floor(Math.abs((minsA - minsB) / 60.0));
+  const mins = Math.abs((minsA - minsB) % 60);
+
+  let h = hours.toString();
+  if (hours < 10) h = '0' + h;
+
+  let m = mins.toString();
+  if (mins < 10) m = '0' + m;
+
+  return `${h}:${m}`;
 }
+
 
 // ================================= Calculate the Sun's position =================================
 // Algorithm based on information in: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
-  if (longitude < 0.0) longitude = 360 + longitude;
+  if (longitude < 0.0) longitude = 360.0 + longitude;
 
   const dateArr = dateToArray(date);
   const diy = isLeapYear(dateArr[0]) ? 366 : 365 // days in year
@@ -86,13 +109,6 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
 
   // sza = solar zenith angle (in radians) can then be found from the hour angle (sha), latitude (lat) and solar declination (decl)
   const sza = Math.acos((Math.sin(degrees(latitude)) * Math.sin(decl)) + (Math.cos(degrees(latitude)) * Math.cos(decl) * Math.cos(sha)))
-
-  // saa = the solar azimuth angle (in radians, clockwise from north)
-  //
-  //                        (sin(latitude) * cos(sza)) - sin(decl)
-  // saa = cos(180 - saa) = --------------------------------------
-  //                             cos(latitude) * sin(sza)
-  const saa = (Math.acos(((Math.sin(degrees(latitude)) * Math.cos(sza)) - Math.sin(decl)) / (Math.cos(degrees(latitude)) * Math.sin(sza))) - degrees(180.0)) * -1
   
   // refractionFactor = close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
   // Close to 1.0 for the horizontal, close to 0.0 for the zenith & nadir.
@@ -100,7 +116,6 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2); 
   return {
     sza: 90.0 + (0.833 * refractionFactor) - radians(sza), // 0.833 = rough approximation of refraction near horizon
-    saa: radians(saa),
     time: integersToTimeStr(h, m),
   };
 }
@@ -110,13 +125,14 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
   }
 
-  console.log('sunPath'); // DEBUG
-
   let pathData = [];
   let sunrise = 'not set';
   let sunset = 'not set';
   let zenith = 'not set';
-  let nadir = 'not set';
+  let daylight = 'not set';
+  let darkness = 'not set';
+  let dayPC = 'not set';
+  let nightPC = 'not set';
   let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
@@ -136,10 +152,6 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
         zenith = datum;
       }
 
-       if (lastDatum !== null && thisIsBeforeThat(zenith.time, datum.time) && datum.sza > lastDatum.sza && nadir === 'not set' ) {
-        nadir = datum;
-      }
-
       lastDatum = datum;
     }
   }
@@ -149,46 +161,55 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
 
     if (zenith.sza > 0.0) {
       neverReason = 'never - constant daylight';
+      daylight = '24h 0m';    
+      darkness = '0h 0m';
+      dayPC = 100.0;
+      nightPC = 0.0; 
     } else {
       neverReason = 'never - constant darkness';
       zenith = {
         sza: null,
-        saa: null,
         time: neverReason,
       };
+      daylight = '0h 0m';    
+      darkness = '24h 0m';
+      dayPC = 0.0;
+      nightPC = 100.0;
     }
 
     sunrise = {
       sza: null,
-      saa: null,
       time: neverReason,
     };
 
     sunset = {
       sza: null,
-      saa: null,
       time: neverReason,
     };
+  } else {
+    daylight = timeBetween(sunrise.time, sunset.time);    
+    darkness = timeBetween(daylight, '24:00');
+    const daylightInts = timeStrToIntegers(daylight);
+    const darknessInts = timeStrToIntegers(darkness);
+    dayPC = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
+    nightPC = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
+    daylight = timeStrToDurationStr(daylight);
+    darkness = timeStrToDurationStr(darkness);
   }
 
-  for (const datum of Object.values(pathData)) {
-
-    if (latitude >= 0.0) {
-      if (thisIsBeforeThat(datum.time, zenith.time)) {
-        datum.saa = Math.abs(0.0 - datum.saa) % 360.0;
-      } else {
-        datum.saa = (360.0 - datum.saa) % 360.0;
-      }
-    }
-  }
-
-  console.log(nadir.time);
+  console.log(`daylight: ${daylight}`);
+  console.log(`darkness: ${darkness}`);
+  console.log(`dayPC: ${dayPC}`);
+  console.log(`nightPC: ${nightPC}`);
   
-
   return {
     pathData: pathData,
     sunrise: sunrise,
     sunset: sunset,
     zenith: zenith,
+    daylight: daylight,
+    darkness: darkness,
+    dayPC: dayPC,
+    nightPC: nightPC,
   };
 }

@@ -35,26 +35,8 @@ export default class Chart extends PureComponent <Props> {
           />
           <YAxis tickFormatter={ tick => `${tick}\u02DA` } />
           <Tooltip
-            content={(props) => (
-              <div style={{ border: '#bbb 1.5px solid' }}>
-                <p className='time'>
-                  {props.payload && props.payload[0] != null && props.payload[0].payload.time}
-                </p>
-                <p className='inclination'>
-                  inclination:
-                  {' '}
-                  { props.payload && props.payload[0] != null && props.payload[0].payload.sza.toFixed(2) }
-                  {`\u02DA`}
-                </p>
-                <p className='direction'>
-                  direction:
-                  {' '}
-                  { props.payload && props.payload[0] != null && props.payload[0].payload.saa.toFixed(2) }
-                  {`\u02DA`}
-                </p>
-              </div>
-            )}
             cursor={{ stroke: 'red', strokeWidth: 1 }}
+            formatter={(value) => [`${parseFloat(value).toFixed(2)}\u02DA`, 'inclination']}
           />
           <Line type='monotone' dataKey='sza' stroke='#8884d8' activeDot={{ r: 5 }} strokeWidth={2} dot={false} />          
         </LineChart>
