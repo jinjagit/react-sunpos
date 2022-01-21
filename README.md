@@ -1,21 +1,19 @@
-# Useful Resources
+# Sun Inclination Calculator
+Calculates and presents details of the sun's inclination for a chosen date and place (latitude, longitude & UTC offset)
+
+## Acknowledgement
+- Algorithm to find inclination of sun for specific location and time based on: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
+
+## Resources
 - [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 - [How to set Parent State from Child Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
-- [Free timezone API](https://timezonedb.com/)
-- [React-google-maps click to get coordinates](https://stackoverflow.com/questions/61776224/react-google-maps-click-the-map-to-get-coordinates)
-- [Adding a Map and Markers to a React Application](https://developers.google.com/maps/documentation/javascript/react-map)
-- [react-charts](https://react-charts.tanstack.com/docs/overview)
-- [react-charts quick example](https://www.npmjs.com/package/react-charts#quick-example)
-- [chart.js](https://www.chartjs.org/docs/latest/)
-- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
-- [How to use chart.js to create charts in React](https://www.educative.io/edpresso/how-to-use-chartjs-to-create-charts-in-react)
 - [recharts](https://recharts.org/en-US/)
-- [React Bootstrap icons](https://www.npmjs.com/package/react-bootstrap-icons)
 - [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
 - [Custom Rechart Toolip](https://github.com/recharts/recharts/issues/275)
 
-# Plan
+
+## Development Phases
 1. Create placeholder child components that can pass values through parent to other child.
 - [x] Pass value from parent state to child state (via prop)
 - [x] Pass value from child to parent state (via prop)
@@ -60,85 +58,5 @@ screenshot:
 
 6. Calculate sunrise, sunset and meridian of sun (if any), as position is calculated for every minute
 - [x] Account for locations which may have 24-hour day or night.  
-- [x] Add as points on chart (if possible)
-
-7. Add direction of sun to chart tooltips (including abbreviated direction, e.g. 'WNW;)  
-  
-8. Develop location setter (map?) returns latitude & longitude 
-  
-9. Set timezone, including adjustment for summer/winter changes? (probably need to use API) 
-
-
-
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [x] Present details in table
+- [ ] Add daylight / darkness perceentage graphic and duration details
