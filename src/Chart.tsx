@@ -3,8 +3,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ReferenceArea, R
 
 interface Props {
   data: {
-    sza: number;
-    saa: number;
+    sza:  number;
+    saa:  number;
     time: string;
   }[]
 }

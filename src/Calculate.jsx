@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { FormErrors } from './formErrors';
+import { FormErrors } from './FormErrors';
 import { getPreset, getValid } from './presets';
-import { sunPath } from './sunPath';
+import { sunCalc } from './sunCalc';
 import Output from './Output';
 
 class Calculate extends Component {
@@ -71,31 +71,31 @@ class Calculate extends Component {
         ) { latitudeValid = true; }
 
         fieldValidationErrors.latitude = latitudeValid ? '': ' must be a number (degrees) from -90.0 (S) to 90.0 (N)';
-        break;
-        case 'longitude':
-          longitudeValid = false;
-          
-          if (
-              value.match(/^[+-]?\d+(\.\d+)?$/)
-              && (parseFloat(value) >= -180.0)
-              && (parseFloat(value) <= 180.0)
-          ) { longitudeValid = true; }
-  
-          fieldValidationErrors.longitude = longitudeValid ? '': ' must be a number (degrees) from -180.0 (W) to 180.0 (E)';
-        break;
-        case 'utcOffset':
-          utcOffsetValid = false;
-          
-          if (
-              value.match(/^[+-]?[0-9]+$/)
-              && (parseFloat(value) >= -12)
-              && (parseFloat(value) <= 13)
-          ) { utcOffsetValid = true; }
-  
-          fieldValidationErrors.utcOffset = utcOffsetValid ? '': ' must be a whole number (hours) from -12 to 13';
-        break;
+      break;
+      case 'longitude':
+        longitudeValid = false;
+        
+        if (
+            value.match(/^[+-]?\d+(\.\d+)?$/)
+            && (parseFloat(value) >= -180.0)
+            && (parseFloat(value) <= 180.0)
+        ) { longitudeValid = true; }
+
+        fieldValidationErrors.longitude = longitudeValid ? '': ' must be a number (degrees) from -180.0 (W) to 180.0 (E)';
+      break;
+      case 'utcOffset':
+        utcOffsetValid = false;
+        
+        if (
+            value.match(/^[+-]?[0-9]+$/)
+            && (parseFloat(value) >= -12)
+            && (parseFloat(value) <= 13)
+        ) { utcOffsetValid = true; }
+
+        fieldValidationErrors.utcOffset = utcOffsetValid ? '': ' must be a whole number (hours) from -12 to 13';
+      break;
       default:
-        break;
+      break;
     }
     this.setState(
       {formErrors: fieldValidationErrors,
@@ -125,7 +125,7 @@ class Calculate extends Component {
     evt.preventDefault();
 
     this.setState({
-      data: sunPath(
+      data: sunCalc(
         this.state.date,
         parseFloat(this.state.latitude),
         parseFloat(this.state.longitude),

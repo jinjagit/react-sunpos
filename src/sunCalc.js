@@ -1,17 +1,11 @@
 // Radians to degrees
-const radians = (radians) => {
-  return radians * (180 / Math.PI);
-}
+const radians = (radians) => radians * (180 / Math.PI);
 
 // Degrees to radians
-const degrees = (degrees) => {
-  return degrees * (Math.PI / 180);
-}
+const degrees = (degrees) => degrees * (Math.PI / 180);
 
 // Date (string 'YYY-MM-DD') to array of integers [year, month, day]
-const dateToArray = (date) => {
-  return date.split('-').map(el => parseInt(el));
-}
+const dateToArray = (date) => date.split('-').map(el => parseInt(el));
 
 // Is year (integer) a leap year?
 const isLeapYear = (year) => {
@@ -26,13 +20,11 @@ const yearDay = (date) => {
 }
 
 // Hours and minutes (integers) to fraction of the day (float)
-const timeToFraction = (h, m) => {
-  return (h * 3600 + m * 60) / 86400.0;
-}
+const timeToFraction = (h, m) =>  (h * 3600 + m * 60) / 86400.0;
 
 // Returns time as string in 24-hour format
 const integersToTimeStr = (h, m) => {
-  let hrs = '';
+  let hrs  = '';
   let mins = '';
   
   if (h > 9) {
@@ -69,7 +61,7 @@ const timeBetween = (a, b) => {
   const minsB = (parseInt(partsB[0]) * 60) + parseInt(partsB[1]);
 
   const hours = Math.floor(Math.abs((minsA - minsB) / 60.0));
-  const mins = Math.abs((minsA - minsB) % 60);
+  const mins  = Math.abs((minsA - minsB) % 60);
 
   let h = hours.toString();
   if (hours < 10) h = '0' + h;
@@ -79,7 +71,6 @@ const timeBetween = (a, b) => {
 
   return `${h}:${m}`;
 }
-
 
 // ================================= Calculate the Sun's position =================================
 // Algorithm based on information in: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
@@ -93,12 +84,16 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   const fy = ((2 * Math.PI) / diy) * (yearDay(date) - 1 + timeToFraction(h, m));
 
   // eqtime = equation of time (in minutes)
-  const eqtime = 229.18 * (0.000075 + (0.001868 * Math.cos(fy)) - (0.032077 * Math.sin(fy)) - (0.014615 * Math.cos(2 * fy)) - (0.040849 * Math.sin(2 * fy)))
+  const eqtime = 229.18 * (0.000075 + (0.001868 * Math.cos(fy)) - (0.032077 * Math.sin(fy))
+                 - (0.014615 * Math.cos(2 * fy)) - (0.040849 * Math.sin(2 * fy)))
 
   // decl = solar declination (in radians)
-  const decl = 0.006918 - (0.399912 * Math.cos(fy)) + (0.070257 * Math.sin(fy)) - (0.006758 * Math.cos(2 * fy)) + (0.000907 * Math.sin(2 * fy)) - (0.002697 * Math.cos(3 * fy)) + (0.00148 * Math.sin(3 * fy))
+  const decl = 0.006918 - (0.399912 * Math.cos(fy)) + (0.070257 * Math.sin(fy))
+               - (0.006758 * Math.cos(2 * fy)) + (0.000907 * Math.sin(2 * fy))
+               - (0.002697 * Math.cos(3 * fy)) + (0.00148 * Math.sin(3 * fy))
 
-  // t_offset = time offset (in minutes), where longitude is in degrees (positive to the east of the Prime Meridian), utcOffset is in hours from UTC
+  // t_offset = time offset (in minutes), where longitude is in degrees
+  // (positive to the east of the Prime Meridian), utcOffset is in hours from UTC
   const t_offset = eqtime + (4 * longitude) - (60 * utcOffset)
 
   // tst = true solar time (in minutes), where h is the hour (0 - 23), m is the minute (0 - 59)
@@ -119,20 +114,21 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
     time: integersToTimeStr(h, m),
   };
 }
+// =========================================================================================
 
-export const sunPath = (date, latitude, longitude, utcOffset) => {
+export const sunCalc = (date, latitude, longitude, utcOffset) => {
   const smallestAbs = (a, b) => {
     return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
   }
 
-  let pathData = [];
-  let sunrise = 'not set';
-  let sunset = 'not set';
-  let zenith = 'not set';
-  let daylight = 'not set';
-  let darkness = 'not set';
-  let dayPC = 'not set';
-  let darkPC = 'not set';
+  let pathData  = [];
+  let sunrise   = 'not set';
+  let sunset    = 'not set';
+  let zenith    = 'not set';
+  let daylight  = 'not set';
+  let darkness  = 'not set';
+  let dayPC     = 'not set';
+  let darkPC    = 'not set';
   let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
@@ -161,10 +157,10 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
 
     if (zenith.sza > 0.0) {
       neverReason = 'never - constant daylight';
-      daylight = '24h 0m';    
-      darkness = '0h 0m';
-      dayPC = 100.0;
-      darkPC = 0.0; 
+      daylight    = '24h 0m';    
+      darkness    = '0h 0m';
+      dayPC       = 100.0;
+      darkPC      = 0.0; 
     } else {
       neverReason = 'never - constant darkness';
       zenith = {
@@ -173,8 +169,8 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
       };
       daylight = '0h 0m';    
       darkness = '24h 0m';
-      dayPC = 0.0;
-      darkPC = 100.0;
+      dayPC    = 0.0;
+      darkPC   = 100.0;
     }
 
     sunrise = {
@@ -191,25 +187,20 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     darkness = timeBetween(daylight, '24:00');
     const daylightInts = timeStrToIntegers(daylight);
     const darknessInts = timeStrToIntegers(darkness);
-    dayPC = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
+    dayPC  = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
     darkPC = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
     daylight = timeStrToDurationStr(daylight);
     darkness = timeStrToDurationStr(darkness);
   }
-
-  console.log(`daylight: ${daylight}`);
-  console.log(`darkness: ${darkness}`);
-  console.log(`dayPC: ${dayPC}`);
-  console.log(`darkPC: ${darkPC}`);
   
   return {
     pathData: pathData,
-    sunrise: sunrise,
-    sunset: sunset,
-    zenith: zenith,
+    sunrise:  sunrise,
+    sunset:   sunset,
+    zenith:   zenith,
     daylight: daylight,
     darkness: darkness,
-    dayPC: dayPC,
-    darkPC: darkPC,
+    dayPC:    dayPC,
+    darkPC:   darkPC,
   };
 }
