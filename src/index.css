@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: hsl(56, 70%, 50%) !important;
+  background: hsl(56, 70%, 50%);
 }
 
 input, select {
@@ -68,6 +68,14 @@ table {
   text-align: center;
 }
 
+.left-text {
+  text-align: left;
+}
+
+.right-text {
+  text-align: right;
+}
+
 .centered {
   margin: auto !important;
 }
@@ -90,4 +98,37 @@ table {
   padding: 3px 7.5px;
   background: white;
   color: hsl(56, 70%, 35%);
+}
+
+.duration {
+  padding: 0;
+}
+
+.full {
+  width: 100%;
+}
+
+.half {
+  width: 50%;
+  float: left;
+}
+
+.dur-title-l {
+  padding-right: 10px;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.dur-title-r {
+  padding-left: 10px;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.dur-pc-box-l {
+  background: rgb(255, 87, 87);
+}
+
+.dur-pc-box-r {
+  background: rgb(117, 117, 248);
 }

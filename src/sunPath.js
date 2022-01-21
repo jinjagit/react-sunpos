@@ -132,7 +132,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
   let daylight = 'not set';
   let darkness = 'not set';
   let dayPC = 'not set';
-  let nightPC = 'not set';
+  let darkPC = 'not set';
   let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
@@ -164,7 +164,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
       daylight = '24h 0m';    
       darkness = '0h 0m';
       dayPC = 100.0;
-      nightPC = 0.0; 
+      darkPC = 0.0; 
     } else {
       neverReason = 'never - constant darkness';
       zenith = {
@@ -174,7 +174,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
       daylight = '0h 0m';    
       darkness = '24h 0m';
       dayPC = 0.0;
-      nightPC = 100.0;
+      darkPC = 100.0;
     }
 
     sunrise = {
@@ -192,7 +192,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     const daylightInts = timeStrToIntegers(daylight);
     const darknessInts = timeStrToIntegers(darkness);
     dayPC = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
-    nightPC = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
+    darkPC = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
     daylight = timeStrToDurationStr(daylight);
     darkness = timeStrToDurationStr(darkness);
   }
@@ -200,7 +200,7 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
   console.log(`daylight: ${daylight}`);
   console.log(`darkness: ${darkness}`);
   console.log(`dayPC: ${dayPC}`);
-  console.log(`nightPC: ${nightPC}`);
+  console.log(`darkPC: ${darkPC}`);
   
   return {
     pathData: pathData,
@@ -210,6 +210,6 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     daylight: daylight,
     darkness: darkness,
     dayPC: dayPC,
-    nightPC: nightPC,
+    darkPC: darkPC,
   };
 }

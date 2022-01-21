@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FormErrors } from './formErrors';
 import { getPreset, getValid } from './presets';
-import { Output } from './Output.js';
 import { sunPath } from './sunPath';
+import Output from './Output';
 
 class Calculate extends Component {
   constructor (props) {
@@ -142,7 +142,7 @@ class Calculate extends Component {
           <div className='row g-3'>
             <div className='col-lg-8'>
               <p>Choose a date and location (latitude and longitude), and set the UTC offset (timezone difference from UTC, including seasonal adjustments) - or choose a preset example.</p>
-              <p>Click 'Calculate' to see details of the sun's path for your chosen date and place.</p>
+              <p>Click 'Calculate' to see details of the sun's inclination for your chosen date and place.</p>
             </div>
             <div className='col-lg-4'>
               <select className='form-control' value={this.state.select} onChange={this.handleSelect}>            
