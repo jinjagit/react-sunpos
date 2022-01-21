@@ -50,6 +50,14 @@ const integersToTimeStr = (h, m) => {
   return `${hrs}:${mins}`;
 }
 
+// Is this time string (e.g. '12:00') before that time string (e.g. '12:10')? => true
+const thisIsBeforeThat = (a, b) => {
+  const partsA = a.split(':');
+  const partsB = b.split(':');
+
+  return timeToFraction(partsA[0], partsA[1]) < timeToFraction(partsB[0], partsB[1]) ? true : false;
+}
+
 // ================================= Calculate the Sun's position =================================
 // Algorithm based on information in: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
@@ -102,12 +110,13 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
     return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
   }
 
-  console.log('sunPath');
+  console.log('sunPath'); // DEBUG
 
   let pathData = [];
   let sunrise = 'not set';
   let sunset = 'not set';
   let zenith = 'not set';
+  let nadir = 'not set';
   let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
@@ -123,8 +132,12 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
         }
       }
 
-      if (lastDatum === null || datum.sza > lastDatum.sza) {
+      if ((lastDatum === null || datum.sza > lastDatum.sza) && (zenith === 'not set' || datum.sza > zenith.sza)) {
         zenith = datum;
+      }
+
+       if (lastDatum !== null && thisIsBeforeThat(zenith.time, datum.time) && datum.sza > lastDatum.sza && nadir === 'not set' ) {
+        nadir = datum;
       }
 
       lastDatum = datum;
@@ -157,6 +170,20 @@ export const sunPath = (date, latitude, longitude, utcOffset) => {
       time: neverReason,
     };
   }
+
+  for (const datum of Object.values(pathData)) {
+
+    if (latitude >= 0.0) {
+      if (thisIsBeforeThat(datum.time, zenith.time)) {
+        datum.saa = Math.abs(0.0 - datum.saa) % 360.0;
+      } else {
+        datum.saa = (360.0 - datum.saa) % 360.0;
+      }
+    }
+  }
+
+  console.log(nadir.time);
+  
 
   return {
     pathData: pathData,
