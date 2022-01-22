@@ -1,6 +1,7 @@
 # Sun Inclination Calculator
 Calculates and presents details of the sun's inclination for a chosen date and place (latitude, longitude & UTC offset)
 - Accurate to +/- 1 minute (time), when compared to https://www.timeanddate.com/sun/
+- Includes validation of form inputs
 - Reasonably responsive layout (mobile x desktop)
 - Makes use of Recharts charting library
 - I'm still learning the basics of React, so don't take this implementation as exemplary!
