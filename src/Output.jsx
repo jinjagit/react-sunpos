@@ -40,7 +40,7 @@ class Output extends Component {
                 <Chart data={this.props.data.pathData} />
               </div>
             </div>
-            <p><sup>*</sup>This apparent (observed) inclination of the sun includes an estimation of atmospheric refraction (inversely related to deviation from horizontal).</p>
+            <p className='annotation'><sup>*</sup>This apparent (observed) inclination of the sun includes an estimation of atmospheric refraction (inversely related to deviation from horizontal).</p>
           </div>
         </div>
       );

@@ -53,12 +53,11 @@ table {
 
 .chartBox {
   height: 550px !important;
-  padding: 0 !important;
+  padding: 10px 0 0 0  !important;
 }
 
-.borderlessContainer {
+.borderless {
   border-style: none;
-  padding-top: 15px;
 }
 
 .title {
@@ -186,4 +185,8 @@ table {
   border-style: solid;
   border-width: 0 0 0 1px;
   border-color: hsl(56, 70%, 45%);
+}
+
+.annotation {
+  margin-top: 10px;
 }

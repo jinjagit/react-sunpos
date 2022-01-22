@@ -137,8 +137,8 @@ class Calculate extends Component {
   render () {
     return (
       <div>
-        <div className="d-none d-lg-block lg-spacer"></div>
-        <div className="container">
+        <div className='d-none d-lg-block lg-spacer'></div>
+        <div className='container'>
           <h1 className='center-text'>Sun Inclination Calculator</h1>
         </div>
         <div className='container'>
@@ -228,8 +228,8 @@ class Calculate extends Component {
           }}
           data={this.state.data}
         />
-        <div className="container borderlessContainer">
-          <div className="row">
+        <div className='container borderless'>
+          <div className='row'>
             <div className='col-lg-6'>
               <p className='left-text'>Uses <a href='https://gml.noaa.gov/grad/solcalc/solareqns.PDF'>NOAA GSP equations</a></p>
             </div>
