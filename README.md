@@ -18,9 +18,8 @@ Calculates and presents details of the sun's inclination for a chosen date and p
 
 
 ## Development Phases
-1. Create placeholder child components that can pass values through parent to other child.
-- [x] Pass value from parent state to child state (via prop)
-- [x] Pass value from child to parent state (via prop)
+1. Create placeholder components.
+- [x] Pass value from parent child (via prop)
 - [x] Add Bootstrap & basic styling
 - [x] Modularize: each component in a separate file
   
@@ -28,7 +27,7 @@ screenshot:
 ![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/basic.png)
   
 2. Develop date-picker
-- [x] Pass value from date input to output, via page state
+- [x] Pass value from date input to output
 - [x] Clean up basic form styling (use Bootstrap styling)
 - [x] Limit dates to 2002 - 2042
   
