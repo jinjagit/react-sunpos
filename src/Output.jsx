@@ -7,7 +7,13 @@ class Output extends Component {
       return (
         <div>
           <div className='calc-title container'>     
-            <p className='center-text'><strong>Calculation for:</strong> Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}</p>
+            <p className='center-text'>
+              <strong>Calculation for: </strong>
+               Date: {`${this.props.params.date.split('-').reverse().join('/')}`},
+               Latitude: {this.props.params.latitude},
+               Longitude: {this.props.params.longitude},
+               UTC Offset: {this.props.params.utcOffset}
+            </p>
             <div className='row g-3'>
               <div className='col-lg-1'></div>
               <div className='col-lg-2 d-flex align-items-center justify-content-center'>
