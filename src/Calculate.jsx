@@ -223,7 +223,8 @@ class Calculate extends Component {
             longitude: this.state.longitude,
             utcOffset: this.state.utcOffset,
           }}
-          data={this.state.data} />
+          data={this.state.data}
+        />
       </div>
     )
   }

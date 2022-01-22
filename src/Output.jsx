@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Table from './Table';
 import Chart from './Chart.tsx';
 
 class Output extends Component {
@@ -16,30 +17,11 @@ class Output extends Component {
             </p>
             <div className='row g-3'>
               <div className='col-lg-1'></div>
-              <div className='col-lg-2 d-flex align-items-center justify-content-center'>
-                <table className="table w-auto">
-                  <thead>
-                    <tr>
-                      <th scope="col">Event</th>
-                      <th scope="col">Time</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sunrise</td>
-                      <td>{this.props.data.sunrise.time}</td>
-                    </tr>
-                    <tr>
-                      <td>Zenith</td>
-                      <td>{this.props.data.zenith.time}</td>
-                    </tr>
-                    <tr>
-                      <td>Sunset</td>
-                      <td>{this.props.data.sunset.time}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Table
+                sunrise={this.props.data.sunrise.time}
+                zenith={this.props.data.zenith.time}
+                sunset={this.props.data.sunset.time}
+              />
               <div className='col-lg-1'></div>
               <div className='col-lg-7 d-flex align-items-center justify-content-center'>
                 <div className='full'>
