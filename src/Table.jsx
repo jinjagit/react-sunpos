@@ -4,11 +4,11 @@ class Table extends Component {
   render() {    
     return (
       <div className='col-lg-2 d-flex align-items-center justify-content-center'>
-        <table className="table w-auto">
+        <table className='table w-auto'>
           <thead>
             <tr>
-              <th scope="col">Event</th>
-              <th scope="col">Time</th>
+              <th scope='col'>Event</th>
+              <th scope='col'>Time</th>
             </tr>
           </thead>
           <tbody>

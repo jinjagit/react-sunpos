@@ -36,7 +36,7 @@ class Output extends Component {
           <div className='container'>
             <div className='chartBox'>
               <div className='chart'>
-                <h5 className='title'>Inclination<sup>*</sup> of Sun (degrees) x Time (HH:MM)</h5>
+                <h5 className='chart-title'>Inclination<sup>*</sup> of Sun (degrees) x Time (HH:MM)</h5>
                 <Chart data={this.props.data.pathData} />
               </div>
             </div>

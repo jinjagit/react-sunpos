@@ -1,5 +1,9 @@
 # Sun Inclination Calculator
 Calculates and presents details of the sun's inclination for a chosen date and place (latitude, longitude & UTC offset)
+- Accurate to +/- 1 minute (time), when compared to https://www.timeanddate.com/sun/
+- Reasonably responsive layout (mobile x desktop)
+- Makes use of Recharts charting library
+- I'm still learning the basics of React, so don't take this implementation as exemplary!
 
 ## Acknowledgement
 - Algorithm to find inclination of sun for specific location and time based on: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
@@ -8,7 +12,7 @@ Calculates and presents details of the sun's inclination for a chosen date and p
 - [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
 - [How to set Parent State from Child Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
-- [recharts](https://recharts.org/en-US/)
+- [Recharts](https://recharts.org/en-US/)
 - [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
 - [Custom Rechart Toolip](https://github.com/recharts/recharts/issues/275)
 
@@ -29,7 +33,7 @@ screenshot:
 - [x] Limit dates to 2002 - 2042
   
 screenshot:  
-![basic](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
+![basic chart](https://github.com/jinjagit/react-sunpos/blob/main/img/datepicker.png)
   
 3. Develop basic chart plotting that dynamically updates
 - [x] Add recharts npm dependency and get basic static example working
@@ -54,9 +58,12 @@ screenshot:
 - [x] Plot sun's inclination over day
 
 screenshot:  
-![form](https://github.com/jinjagit/react-sunpos/blob/main/img/Screenshot_2022-01-16.png)
+![chart](https://github.com/jinjagit/react-sunpos/blob/main/img/chart.png)
 
 6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute
 - [x] Account for locations which may have 24-hour day or night.  
 - [x] Present details in table
-- [ ] Add daylight / darkness perceentage graphic and duration details
+- [x] Add daylight / darkness perceentage graphic and duration details
+- [x] Finalise layout
+
+![graphic](https://github.com/jinjagit/react-sunpos/blob/main/img/graphic.png)

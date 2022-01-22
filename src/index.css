@@ -60,7 +60,7 @@ table {
   border-style: none;
 }
 
-.title {
+.chart-title {
   margin-top: 3px;
 }
 
@@ -118,7 +118,7 @@ table {
 }
 
 .dur-title-l {
-  padding-right: 14px;
+  padding-right: 13px;
   height: 2rem;
   line-height: 2rem;
   border-style: solid;
@@ -189,4 +189,15 @@ table {
 
 .annotation {
   margin-top: 10px;
+}
+
+.footer-col {
+  line-height: 40px;
+  height: 40px;
+}
+
+.title {
+  padding: 5px 10px 5px 10px;
+  line-height: 53px;
+  height: 63px;
 }
