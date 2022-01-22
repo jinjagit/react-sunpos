@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/react-sunpos/static/css/main.5ac064aa.css",
-    "main.js": "/react-sunpos/static/js/main.10dfff2c.js",
-    "index.html": "/react-sunpos/index.html",
-    "main.5ac064aa.css.map": "/react-sunpos/static/css/main.5ac064aa.css.map",
-    "main.10dfff2c.js.map": "/react-sunpos/static/js/main.10dfff2c.js.map"
+    "main.css": "/static/css/main.5ac064aa.css",
+    "main.js": "/static/js/main.10dfff2c.js",
+    "index.html": "/index.html",
+    "main.5ac064aa.css.map": "/static/css/main.5ac064aa.css.map",
+    "main.10dfff2c.js.map": "/static/js/main.10dfff2c.js.map"
   },
   "entrypoints": [
     "static/css/main.5ac064aa.css",
