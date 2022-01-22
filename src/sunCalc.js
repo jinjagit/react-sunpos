@@ -106,7 +106,6 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   const sza = Math.acos((Math.sin(degrees(latitude)) * Math.sin(decl)) + (Math.cos(degrees(latitude)) * Math.cos(decl) * Math.cos(sha)))
   
   // refractionFactor = close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
-  // Close to 1.0 for the horizontal, close to 0.0 for the zenith & nadir.
   // This applies refraction even when the sun is well below the horizon, but it's better than nothing.
   const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2);
 
