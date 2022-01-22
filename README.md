@@ -1,5 +1,6 @@
 # Sun Inclination Calculator
 Calculates and presents details of the sun's inclination for a chosen date and place (latitude, longitude & UTC offset)
+- Deployed here: https://react-sunpos.simontharby.com/
 - Accurate to +/- 1 minute (time), when compared to https://www.timeanddate.com/sun/
 - Includes validation of form inputs
 - Reasonably responsive layout (mobile x desktop)
