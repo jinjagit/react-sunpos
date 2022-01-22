@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table from './Table';
+import Graphic from './Graphic';
 import Chart from './Chart.tsx';
 
 class Output extends Component {
@@ -23,38 +24,12 @@ class Output extends Component {
                 sunset={this.props.data.sunset.time}
               />
               <div className='col-lg-1'></div>
-              <div className='col-lg-7 d-flex align-items-center justify-content-center'>
-                <div className='full'>
-                  <div>
-                    <div className='half dur-title-l'>
-                      <p className='right-text'>{this.props.data.daylight} of daylight</p>
-                    </div>
-                    <div className='half dur-title-r'>
-                      <p className='left-text'>{this.props.data.darkness} of darkness</p>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='half dur-pc-box-l'>
-                      <div className='day-bar' style={{width: `calc(calc(100% - 80px) * ${this.props.data.dayPC / 100})`}}></div>
-                      <div className='day-bar-text-box'>
-                        <p className='day-bar-text'>{this.props.data.dayPC}%</p>
-                      </div>
-                    </div>
-                    <div className='half dur-pc-box-r'>
-                      <div className='dark-bar' style={{width: `calc(calc(100% - 80px) * ${this.props.data.darkPC / 100})`}}></div>
-                      <div className='dark-bar-text-box'>
-                        <p className='dark-bar-text'>{this.props.data.darkPC}%</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className='half dur-bot-l'>
-                    </div>
-                    <div className='half dur-bot-r'>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Graphic
+                daylight={this.props.data.daylight}
+                darkness={this.props.data.darkness}
+                dayPc={this.props.data.dayPc}
+                darkPc={this.props.data.darkPc}
+              />
               <div className='col-lg-1'></div>
             </div>
           </div>

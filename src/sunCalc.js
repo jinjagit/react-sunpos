@@ -127,8 +127,8 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
   let zenith    = 'not set';
   let daylight  = 'not set';
   let darkness  = 'not set';
-  let dayPC     = 'not set';
-  let darkPC    = 'not set';
+  let dayPc     = 'not set';
+  let darkPc    = 'not set';
   let lastDatum = null;
 
   for (let h = 0; h < 24; h++) {
@@ -159,8 +159,8 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
       neverReason = 'constant daylight';
       daylight    = '24h 0m';    
       darkness    = '0h 0m';
-      dayPC       = 100.0;
-      darkPC      = 0.0; 
+      dayPc       = 100.0;
+      darkPc      = 0.0; 
     } else {
       neverReason = 'constant darkness';
       zenith = {
@@ -169,8 +169,8 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
       };
       daylight = '0h 0m';    
       darkness = '24h 0m';
-      dayPC    = 0.0;
-      darkPC   = 100.0;
+      dayPc    = 0.0;
+      darkPc   = 100.0;
     }
 
     sunrise = {
@@ -187,8 +187,8 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
     darkness = timeBetween(daylight, '24:00');
     const daylightInts = timeStrToIntegers(daylight);
     const darknessInts = timeStrToIntegers(darkness);
-    dayPC  = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
-    darkPC = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
+    dayPc  = Math.round(timeToFraction(daylightInts[0], daylightInts[1]) * 100.0);
+    darkPc = Math.round(timeToFraction(darknessInts[0], darknessInts[1]) * 100.0);
     daylight = timeStrToDurationStr(daylight);
     darkness = timeStrToDurationStr(darkness);
   }
@@ -200,7 +200,7 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
     zenith:   zenith,
     daylight: daylight,
     darkness: darkness,
-    dayPC:    dayPC,
-    darkPC:   darkPC,
+    dayPc:    dayPc,
+    darkPc:   darkPc,
   };
 }
