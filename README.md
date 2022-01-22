@@ -62,7 +62,7 @@ screenshot:
 6. Calculate sunrise, sunset and zenith of sun (if any), as position is calculated for every minute
 - [x] Account for locations which may have 24-hour day or night.  
 - [x] Present details in table
-- [x] Add daylight / darkness perceentage graphic and duration details
+- [x] Add daylight / darkness percentage graphic and duration details
 - [x] Finalise layout
 
 ![graphic](https://github.com/jinjagit/react-sunpos/blob/main/img/graphic.png)
