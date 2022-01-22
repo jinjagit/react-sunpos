@@ -28,10 +28,8 @@ class Graphic extends Component {
             </div>
           </div>
           <div>
-            <div className='half dur-bot-l'>
-            </div>
-            <div className='half dur-bot-r'>
-            </div>
+            <div className='half dur-bot-l'></div>
+            <div className='half dur-bot-r'></div>
           </div>
         </div>
       </div>
