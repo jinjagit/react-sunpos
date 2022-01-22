@@ -8,9 +8,7 @@ const degrees = (degrees) => degrees * (Math.PI / 180);
 const dateToArray = (date) => date.split('-').map(el => parseInt(el));
 
 // Is year (integer) a leap year?
-const isLeapYear = (year) => {
-  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-}
+const isLeapYear = (year) => (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 
 // Date (string 'YYY-MM-DD') to day of year (integer)
 // https://www.epochconverter.com/daynumbers
