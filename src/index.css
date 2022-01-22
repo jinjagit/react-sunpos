@@ -58,6 +58,7 @@ table {
 
 .borderlessContainer {
   border-style: none;
+  padding-top: 15px;
 }
 
 .title {
@@ -100,6 +101,10 @@ table {
   color: hsl(56, 70%, 35%);
 }
 
+.calc-title {
+  padding-top: 15px;
+}
+
 .duration {
   padding: 0;
 }
@@ -114,21 +119,71 @@ table {
 }
 
 .dur-title-l {
-  padding-right: 10px;
+  padding-right: 14px;
   height: 2rem;
   line-height: 2rem;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: hsl(56, 70%, 45%);
 }
 
 .dur-title-r {
   padding-left: 10px;
   height: 2rem;
   line-height: 2rem;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  border-color: hsl(56, 70%, 45%);
 }
 
 .dur-pc-box-l {
-  background: rgb(255, 87, 87);
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: hsl(56, 70%, 45%);
 }
 
 .dur-pc-box-r {
-  background: rgb(117, 117, 248);
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  border-color: hsl(56, 70%, 45%);
+}
+
+.day-bar {
+  height: 30px;
+  background: hsl(56, 70%, 60%);
+  float: right;
+}
+
+.day-bar-text-box {
+  height: 30px;
+  float: right;
+  line-height: 30px;
+  margin-right: 7px;
+}
+
+.dark-bar {
+  height: 30px;
+  background: #212529;
+  float: left;
+}
+
+.dark-bar-text-box {
+  height: 30px;
+  float: left;
+  line-height: 30px;
+  margin-left: 7px;
+}
+
+.dur-bot-l {
+  height: 15px;
+  border-style: solid;
+  border-width: 0 1px 0 0;
+  border-color: hsl(56, 70%, 45%);
+}
+
+.dur-bot-r {
+  height: 15px;
+  border-style: solid;
+  border-width: 0 0 0 1px;
+  border-color: hsl(56, 70%, 45%);
 }

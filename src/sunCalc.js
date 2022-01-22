@@ -156,13 +156,13 @@ export const sunCalc = (date, latitude, longitude, utcOffset) => {
     let neverReason = '';
 
     if (zenith.sza > 0.0) {
-      neverReason = 'never - constant daylight';
+      neverReason = 'constant daylight';
       daylight    = '24h 0m';    
       darkness    = '0h 0m';
       dayPC       = 100.0;
       darkPC      = 0.0; 
     } else {
-      neverReason = 'never - constant darkness';
+      neverReason = 'constant darkness';
       zenith = {
         sza: null,
         time: neverReason,

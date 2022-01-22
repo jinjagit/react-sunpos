@@ -6,7 +6,7 @@ class Output extends Component {
     if (this.props.data.sunrise !== undefined) {
       return (
         <div>
-          <div className='container'>     
+          <div className='calc-title container'>     
             <p className='center-text'><strong>Calculation for:</strong> Date: {this.props.params.date}, Latitude: {this.props.params.latitude}, Longitude: {this.props.params.longitude}, UTC Offset: {this.props.params.utcOffset}</p>
             <div className='row g-3'>
               <div className='col-lg-1'></div>
@@ -47,10 +47,22 @@ class Output extends Component {
                   </div>
                   <div>
                     <div className='half dur-pc-box-l'>
-                      <p className='center-text'>Half</p>
+                      <div className='day-bar' style={{width: `calc(calc(100% - 80px) * ${this.props.data.dayPC / 100})`}}></div>
+                      <div className='day-bar-text-box'>
+                        <p className='day-bar-text'>{this.props.data.dayPC}%</p>
+                      </div>
                     </div>
                     <div className='half dur-pc-box-r'>
-                      <p className='center-text'>Half</p>
+                      <div className='dark-bar' style={{width: `calc(calc(100% - 80px) * ${this.props.data.darkPC / 100})`}}></div>
+                      <div className='dark-bar-text-box'>
+                        <p className='dark-bar-text'>{this.props.data.darkPC}%</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className='half dur-bot-l'>
+                    </div>
+                    <div className='half dur-bot-r'>
                     </div>
                   </div>
                 </div>
