@@ -8,7 +8,7 @@ class Output extends Component {
     if (this.props.data.sunrise !== undefined) {
       return (
         <div>
-          <div className='calc-title container'>     
+          <div className='calc container'>     
             <p className='center-text'>
               <strong>Calculation for: </strong>
                Date: {`${this.props.params.date.split('-').reverse().join('/')}`},
@@ -33,7 +33,7 @@ class Output extends Component {
               <div className='col-lg-1'></div>
             </div>
           </div>
-          <div className='container borderlessContainer'>
+          <div className='container'>
             <div className='chartBox'>
               <div className='chart'>
                 <h5 className='title'>Inclination<sup>*</sup> of Sun (degrees) x Time (HH:MM)</h5>

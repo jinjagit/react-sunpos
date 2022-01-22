@@ -138,6 +138,9 @@ class Calculate extends Component {
     return (
       <div>
         <div className="d-none d-lg-block lg-spacer"></div>
+        <div className="container">
+          <h1 className='center-text'>Sun Inclination Calculator</h1>
+        </div>
         <div className='container'>
           <div className='row g-3'>
             <div className='col-lg-8'>
@@ -225,6 +228,16 @@ class Calculate extends Component {
           }}
           data={this.state.data}
         />
+        <div className="container borderlessContainer">
+          <div className="row">
+            <div className='col-lg-6'>
+              <p className='left-text'>Uses <a href='https://gml.noaa.gov/grad/solcalc/solareqns.PDF'>NOAA GSP equations</a></p>
+            </div>
+            <div className='col-lg-6'>
+              <p className='right-text'>Simon Tharby, 2022 - <a href='https://github.com/jinjagit/react-sunpos'>code</a></p>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

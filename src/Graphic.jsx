@@ -35,7 +35,7 @@ class Graphic extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
