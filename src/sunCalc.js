@@ -118,9 +118,7 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
 // =========================================================================================
 
 export const sunCalc = (date, latitude, longitude, utcOffset) => {
-  const smallestAbs = (a, b) => {
-    return Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
-  }
+  const smallestAbs = (a, b) => Math.abs(a.sza) <= Math.abs(b.sza) ? a : b;
 
   let pathData  = [];
   let sunrise   = 'not set';
