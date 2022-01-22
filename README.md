@@ -10,11 +10,9 @@ Calculates and presents details of the sun's inclination for a chosen date and p
 
 ## Resources
 - [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html)
-- [How to set Parent State from Child Component in ReactJS?](https://www.geeksforgeeks.org/how-to-set-parent-state-from-children-component-in-reactjs/)
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
 - [Recharts](https://recharts.org/en-US/)
 - [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
-- [Custom Rechart Toolip](https://github.com/recharts/recharts/issues/275)
 
 
 ## Development Phases

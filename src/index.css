@@ -1,3 +1,11 @@
+:root {
+  --yellow-1: hsl(56, 70%, 85%);
+  --yellow-2: hsl(56, 70%, 60%);
+  --yellow-3: hsl(56, 70%, 50%);
+  --yellow-4: hsl(56, 70%, 45%);
+  --error-red: #dc3545;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,26 +13,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: hsl(56, 70%, 50%);
+  background: var(--yellow-3);
 }
 
 input, select {
   border-width: 1px;
   border-style: solid;
-  border-color: hsl(56, 70%, 45%) !important;
+  border-color: var(--yellow-4) !important;
 }
 
 table {
   border-collapse: collapse;
-  border-color: hsl(56, 70%, 45%) !important;
+  border-color: var(--yellow-4) !important;
 }
 
 .container {
-  background: hsl(56, 70%, 85%);
+  background: var(--yellow-1);
   padding: 10px;
   border-width: 0 0 3px 0;
   border-style: solid;
-  border-color: hsl(56, 70%, 50%) !important;
+  border-color: var(--yellow-3) !important;
 }
 
 .lg-spacer {
@@ -32,12 +40,12 @@ table {
 }
 
 .formErrors {
-  color: #dc3545;
+  color: var(--error-red);
   text-align: center;
 }
 
 .has-error {
-  border-color: #dc3545 !important;
+  border-color: var(--error-red) !important;
   border-width: 3px !important;
 }
 
@@ -80,26 +88,6 @@ table {
   margin: auto !important;
 }
 
-.time {
-  margin: 0 0;
-  padding: 3px 7.5px;
-  background: white;
-}
-
-.inclination {
-  margin: 0 0;
-  padding: 3px 7.5px;
-  background: white;
-  color: hsl(243, 52%, 58%);
-}
-
-.direction {
-  margin: 0 0;
-  padding: 3px 7.5px;
-  background: white;
-  color: hsl(56, 70%, 35%);
-}
-
 .calc {
   padding-top: 15px;
 }
@@ -123,7 +111,7 @@ table {
   line-height: 2rem;
   border-style: solid;
   border-width: 0 1px 0 0;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .dur-title-r {
@@ -132,24 +120,24 @@ table {
   line-height: 2rem;
   border-style: solid;
   border-width: 0 0 0 1px;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .dur-pc-box-l {
   border-style: solid;
   border-width: 0 1px 0 0;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .dur-pc-box-r {
   border-style: solid;
   border-width: 0 0 0 1px;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .day-bar {
   height: 30px;
-  background: hsl(56, 70%, 60%);
+  background: var(--yellow-2);
   float: right;
 }
 
@@ -177,14 +165,14 @@ table {
   height: 15px;
   border-style: solid;
   border-width: 0 1px 0 0;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .dur-bot-r {
   height: 15px;
   border-style: solid;
   border-width: 0 0 0 1px;
-  border-color: hsl(56, 70%, 45%);
+  border-color: var(--yellow-4);
 }
 
 .annotation {
