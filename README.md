@@ -15,6 +15,7 @@ Calculates and presents details of the sun's inclination for a chosen date and p
 - [Adding Bootstrap](https://create-react-app.dev/docs/adding-bootstrap/)
 - [Recharts](https://recharts.org/en-US/)
 - [How to do Simple Form Validation in #Reactjs](https://learnetto.com/blog/react-form-validation)
+- [Setting up a custom domain for your React app on GitHub Pages](https://medium.com/@shauxna/setting-up-a-custom-domain-for-your-react-app-on-github-pages-827b2606ca18)
 
 
 ## Development Phases
