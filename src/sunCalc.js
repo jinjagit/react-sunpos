@@ -15,7 +15,7 @@ const isLeapYear = (year) => {
 // Date (string 'YYY-MM-DD') to day of year (integer)
 // https://www.epochconverter.com/daynumbers
 const yearDay = (date) => {
-  let day = new Date(date);
+  const day = new Date(date);
   return Math.ceil((day - new Date(day.getFullYear(),0,1)) / 86400000) + 1;
 }
 
@@ -108,7 +108,8 @@ const sunPos = (date, h, m, latitude, longitude, utcOffset) => {
   // refractionFactor = close to 1.0 for the horizon, and reduces to 0.0 as deviate further from horizon.
   // Close to 1.0 for the horizontal, close to 0.0 for the zenith & nadir.
   // This applies refraction even when the sun is well below the horizon, but it's better than nothing.
-  const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2); 
+  const refractionFactor = Math.pow((90.0 - Math.abs(90 - radians(sza))) / 90.0, 2);
+
   return {
     sza: 90.0 + (0.833 * refractionFactor) - radians(sza), // 0.833 = rough approximation of refraction near horizon
     time: integersToTimeStr(h, m),

@@ -53,9 +53,9 @@ class Calculate extends Component {
 
     switch(fieldName) {
       case 'date':
-        let testDate = new Date(value+'T00:00:00');
-        let minDate = new Date('2002-01-01T00:00:00');
-        let maxDate = new Date('2042-12-31T00:00:00');
+        const testDate = new Date(value+'T00:00:00');
+        const minDate = new Date('2002-01-01T00:00:00');
+        const maxDate = new Date('2042-12-31T00:00:00');
 
         (testDate >= minDate && testDate <= maxDate) ? dateValid = true : dateValid = false;
 
